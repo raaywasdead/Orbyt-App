@@ -84,7 +84,7 @@ export default function LoginPage({ onEnter, onBack, defaultTab = 'login' }: Log
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
     tl.fromTo('.lp-welcome-nebula', { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.4, ease: 'power2.out' }, 0)
     tl.fromTo('.lp-welcome-logo-wrap', { opacity: 0, scale: 0.5, y: -60 }, { opacity: 1, scale: 1, y: 0, duration: 0.9, ease: 'back.out(1.6)' }, 0.35)
-    tl.fromTo('.lp-orbit-active', { strokeDashoffset: 452 }, { strokeDashoffset: 60, duration: 1.6, ease: 'power2.inOut' }, 0.65)
+    tl.fromTo('.lp-orbit-active', { strokeDashoffset: 452 }, { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut' }, 0.65)
     tl.fromTo('.lp-welcome-title', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7 }, 1.05)
     tl.fromTo('.lp-welcome-sub', { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' }, 1.35)
     tl.fromTo('.lp-welcome-btn', { opacity: 0, y: 22, scale: 0.93 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'back.out(1.4)' }, 1.6)
