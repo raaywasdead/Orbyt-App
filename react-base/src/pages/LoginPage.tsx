@@ -132,7 +132,7 @@ export default function LoginPage({ onEnter, onBack, defaultTab = 'login' }: Log
     e.preventDefault();
     setSignupErro('');
     try {
-      const resp = await fetch('https://orbyt-app.up.railway.app/api/register', {
+      const resp = await fetch('https://orbyt-app.up.railway.app/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
