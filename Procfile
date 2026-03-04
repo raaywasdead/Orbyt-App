@@ -1,1 +1,1 @@
-web: cd react-base/back-end && node server.js
+web: node react-base/back-end/server.js

@@ -211,9 +211,6 @@ export default function LoginPage({ onEnter, onBack, defaultTab = 'login' }: Log
                     {t('login.forgot')}
                   </button>
                   <button type="submit" className="lp-btn-submit">
-                    <button type="button" className="lp-btn-demo" onClick={onEnter}>
-                      Entrar sem conta (demo)
-                    </button>
                     <span>{t('login.loginBtn')}</span>
                     <div className="lp-btn-shimmer" />
                   </button>
