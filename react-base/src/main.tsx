@@ -1,4 +1,3 @@
-
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
@@ -19,6 +18,10 @@ import { preloadServerData, setupSync } from './services/sync'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage  from './pages/ResetPasswordPage';
 
+function RotaProtegida({ children }: { children: React.ReactNode }) {
+  if (!localStorage.getItem('orbyt_onboarded')) return <Navigate to="/" replace />
+  return <>{children}</>
+}
 
 function AppRoutes() {
   const navigate = useNavigate()
@@ -33,13 +36,13 @@ function AppRoutes() {
       <Route path="/login" element={<LoginPage onEnter={() => navigate('/intro')} onBack={() => navigate('/')} />} />
       <Route path="/signup" element={<LoginPage onEnter={() => navigate('/intro')} onBack={() => navigate('/')} defaultTab="signup" />} />
       <Route path="/intro" element={<IntroOnboarding onComplete={() => navigate('/app')} />} />
-      <Route path="/app" element={<AppWrapper />} />
+      <Route path="/app" element={<RotaProtegida><AppWrapper /></RotaProtegida>} />
       <Route path="/termos" element={<TermoUsoPage />} />
       <Route path="/privacidade" element={<PoliticaPrivacidade />} />
       <Route path="/contato" element={<ContactPage />} />
       <Route path="/faq" element={<FAQ />} />
-      <Route path="/perfil" element={<ProfilePage />} />
-      <Route path="/admin" element={<AdminPage />} />
+      <Route path="/perfil" element={<RotaProtegida><ProfilePage /></RotaProtegida>} />
+      <Route path="/admin" element={<RotaProtegida><AdminPage /></RotaProtegida>} />
       <Route path="/esqueci-senha" element={<ForgotPasswordPage />} />
       <Route path="/redefinir-senha" element={<ResetPasswordPage />} />
       <Route path="*" element={<NotFoundPage />} />

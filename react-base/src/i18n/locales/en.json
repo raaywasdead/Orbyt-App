@@ -329,7 +329,11 @@
       "shortcutCancel": "Cancel editing",
       "shortcutPaste": "Paste multiple tasks",
       "saveNote": "Your tasks are automatically saved in the browser. Data persists even after closing the page.",
-      "noteImportant": "Important:"
+      "noteImportant": "Important:",
+      "moreInfo": "More information",
+      "contact": "Contact",
+      "terms": "Terms of Use",
+      "privacy": "Privacy"
     },
     "batchGuide": {
       "title": "Mini guide (Bulk)",

@@ -3353,6 +3353,27 @@ function App() {
                   </div>
                 </div>
               )}
+              {/* Seção: Links úteis */}
+              <div className="guia-section">
+                <div className="guia-section-header">
+                  <HelpCircle size={16} className="guia-section-icon-svg" />
+                  <span className="guia-section-title">{t('app.guide.moreInfo')}</span>
+                </div>
+                <div className="guia-links">
+                  <a href="/faq" target="_blank" rel="noopener noreferrer" className="guia-link-btn">
+                    <HelpCircle size={16} /> FAQ
+                  </a>
+                  <a href="/contato" target="_blank" rel="noopener noreferrer" className="guia-link-btn">
+                    <CornerDownLeft size={16} /> {t('app.guide.contact')}
+                  </a>
+                  <a href="/termos" target="_blank" rel="noopener noreferrer" className="guia-link-btn">
+                    <FileText size={16} /> {t('app.guide.terms')}
+                  </a>
+                  <a href="/privacidade" target="_blank" rel="noopener noreferrer" className="guia-link-btn">
+                    <FileText size={16} /> {t('app.guide.privacy')}
+                  </a>
+                </div>
+              </div>
             </div>{/* fim page-overlay-body */}
           </div>{/* fim page-overlay */}
         </main>
@@ -3679,11 +3700,11 @@ function TaskItem({
 
   const clampedTransform = transform ? { ...transform, x: 0 } : transform
 
-const style = {
-  transform: CSS.Transform.toString(clampedTransform),
-  transition: dndIsDragging ? 'none' : undefined,
-  opacity: 1,
-}
+  const style = {
+    transform: CSS.Transform.toString(clampedTransform),
+    transition: dndIsDragging ? 'none' : undefined,
+    opacity: 1,
+  }
 
   return (
     <li

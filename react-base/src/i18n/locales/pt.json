@@ -329,7 +329,11 @@
       "shortcutCancel": "Cancelar edição",
       "shortcutPaste": "Colar múltiplas tarefas",
       "saveNote": "Suas tarefas são salvas automaticamente no navegador. Os dados persistem mesmo após fechar a página.",
-      "noteImportant": "Importante:"
+      "noteImportant": "Importante:",
+      "moreInfo": "Mais informações",
+      "contact": "Contato",
+      "terms": "Termos de Uso",
+      "privacy": "Privacidade"
     },
     "batchGuide": {
       "title": "Mini guia (Em lote)",
