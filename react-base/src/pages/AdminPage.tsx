@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, Trash2, Users, Database, ShieldCheck, RefreshCw } from 'lucide-react'
 import '../styles/AdminPage.css'
 
-const API = 'http://localhost:3001'
+const API = 'https://orbyt-app.up.railway.app'
 
 interface Usuario {
   id: number

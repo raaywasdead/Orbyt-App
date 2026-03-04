@@ -1,4 +1,4 @@
-const API = 'http://localhost:3001'
+const API = 'https://orbyt-app.up.railway.app'
 
 // Chaves do localStorage que pertencem à conta do usuário
 // e devem ser sincronizadas com o servidor

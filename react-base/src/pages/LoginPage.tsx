@@ -114,7 +114,7 @@ export default function LoginPage({ onEnter, onBack, defaultTab = 'login' }: Log
     e.preventDefault()
     setLoginErro('')
     try {
-      const resp = await fetch('http://localhost:3001/api/login', {
+      const resp = await fetch('https://orbyt-app.up.railway.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -132,7 +132,7 @@ export default function LoginPage({ onEnter, onBack, defaultTab = 'login' }: Log
     e.preventDefault();
     setSignupErro('');
     try {
-      const resp = await fetch('http://localhost:3001/api/signup', {
+      const resp = await fetch('https://orbyt-app.up.railway.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
