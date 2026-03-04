@@ -1019,6 +1019,7 @@ body.tema-claro .aurora-bg { background: #f0eef8; }
   gap: 10px;
   padding-bottom: 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 10px;
 }
 
 .guia-section-icon {
