@@ -458,3 +458,7 @@ body.tema-claro .sidebar-streak-label {
   letter-spacing: -0.02em;
   user-select: none;
 }
+
+.sidebar-edge-tab {
+  touch-action: pan-y !important;
+}

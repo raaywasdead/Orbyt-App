@@ -29,7 +29,7 @@ export const BADGES: Badge[] = [
   {
     id: 'maratona',
     nome: 'Maratona',
-    descricao: 'Conclua tarefas por 7 dias seguidos. (Desbloqueia estatísticas avançadas!)',
+    descricao: 'Conclua tarefas por 7 dias seguidos.',
     icone: FaRocket,
     cor: '#f59e42',
     tipo: 'epic',

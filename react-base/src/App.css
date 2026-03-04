@@ -7315,23 +7315,6 @@ body.tema-claro .badge-unlock-label {
   transform: translateY(-1px);
 }
 
-/* Tema claro */
-body.tema-claro .sobre-app-name-text { text-shadow: none; }
-body.tema-claro .sobre-tagline { color: rgba(0,0,0,0.4); }
-body.tema-claro .sobre-autor-label { color: rgba(0,0,0,0.35); }
-body.tema-claro .sobre-autor-nome { color: rgba(0,0,0,0.82); }
-body.tema-claro .sobre-divider { background: rgba(0,0,0,0.1); }
-body.tema-claro .sobre-link-linkedin {
-  color: #1d6fce;
-  border-color: rgba(29,111,206,0.25);
-  background: rgba(29,111,206,0.06);
-}
-body.tema-claro .sobre-link-github {
-  color: rgba(0,0,0,0.55);
-  border-color: rgba(0,0,0,0.15);
-  background: rgba(0,0,0,0.03);
-}
-
 /* ── INTRO EYEBROW BRAND ───────────────────────────────── */
 .intro-eyebrow-brand {
   font-size: 0.68rem;
@@ -7363,4 +7346,8 @@ body.tema-claro .sobre-link-github {
 .input-container {
   position: relative;
   z-index: 201 !important;
+}
+
+html, body {
+  overscroll-behavior-x: none;
 }

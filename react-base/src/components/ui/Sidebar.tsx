@@ -151,8 +151,6 @@ export default function Sidebar({
       // Tap na aba (fechado) → abre com animação CSS
       if (!dragged && absDx < 10 && absDy < 10) {
         if (!openRef.current) {
-          // rAF: garante que o browser vê o estado "fechado" antes de
-          // aplicar a classe mobile-open, para a CSS transition disparar
           requestAnimationFrame(() => cbOpen.current?.())
           setBlur(true)
         }
@@ -164,12 +162,18 @@ export default function Sidebar({
       let willOpen = openRef.current
       if (openRef.current) {
         if (dx < -50) { willOpen = false; cbClose.current?.() }
-        // Não fechou: CSS snap-back restaura posição aberta
       } else {
         if (dx > 50) { willOpen = true; cbOpen.current?.() }
       }
       setBlur(willOpen)
     }
+
+    // Bloqueia o gesto de "voltar" do browser na aba de borda
+    const edgeTab = el.querySelector<HTMLElement>('.sidebar-edge-tab')
+    const onEdgeStart = (e: TouchEvent) => {
+      e.preventDefault()
+    }
+    edgeTab?.addEventListener('touchstart', onEdgeStart, { passive: false })
 
     // Listeners no document: captura arraste que começa no backdrop
     document.addEventListener('touchstart', onStart, { passive: true })
@@ -180,6 +184,7 @@ export default function Sidebar({
       document.removeEventListener('touchstart', onStart)
       document.removeEventListener('touchmove',  onMove)
       document.removeEventListener('touchend',   onEnd)
+      edgeTab?.removeEventListener('touchstart', onEdgeStart)
     }
   }, [])
 
@@ -254,7 +259,7 @@ export default function Sidebar({
             <div className={`sidebar-streak${streakClass ? ` ${streakClass}` : ''}`}>
               <span className="sidebar-streak-icon"><Flame /></span>
               <div className="sidebar-streak-info">
-                <span className="sidebar-streak-number">{streakDias}</span>
+                <span className="sidebar-streak-number">{streakDias} </span>
                 <span className="sidebar-streak-label">
                   {streakDias === 1 ? t('sidebar.dayStreak') : t('sidebar.daysStreak')}
                 </span>

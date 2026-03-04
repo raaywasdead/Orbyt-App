@@ -26,6 +26,13 @@ export default defineConfig({
         lang: 'pt-BR',
         icons: [
           {
+            src: '/Logo-Orbyt.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
+            purpose: 'any maskable',
+          },
+          // PNG fallback opcional
+          {
             src: '/logo.png',
             sizes: '192x192',
             type: 'image/png',
@@ -36,12 +43,6 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable',
-          },
-          {
-            src: '/Logo-Orbyt.svg',
-            sizes: 'any',
-            type: 'image/svg+xml',
-            purpose: 'any',
           },
         ],
         screenshots: [],

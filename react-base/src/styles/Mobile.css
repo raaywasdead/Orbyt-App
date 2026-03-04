@@ -201,21 +201,22 @@ html, body { overflow-x: hidden; max-width: 100%; }
   }
 }
 
-/* Touch improvements */
 @media (hover: none) and (pointer: coarse) {
-  /* Aumenta área de toque */
-  button,
-  .pill,
-  li {
-    min-height: 44px; /* Recomendação Apple */
+  /* Só os itens de lista e pills precisam de min-height */
+  li,
+  .pill {
+    min-height: 44px;
   }
 
-  /* Remove hover effects em touch */
+  /* Remove de tudo que não deve esticar */
+  button {
+    min-height: unset !important;
+  }
+
   li:hover {
     transform: none;
   }
 
-  /* Melhora feedback de toque */
   button:active,
   .pill:active {
     transform: scale(0.95);
@@ -806,3 +807,11 @@ html, body { overflow-x: hidden; max-width: 100%; }
   }
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .btn-prioridade,
+  .btn-local,
+  .btn-lote,
+  .btn-profile {
+    min-height: unset !important;
+  }
+}
