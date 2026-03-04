@@ -89,7 +89,8 @@ export default defineConfig({
           if (id.includes('lucide-react')) return 'lucide'
           if (id.includes('framer-motion')) return 'framer-motion'
           if (id.includes('react-icons')) return 'react-icons'
-          if (id.includes('react-dom') || id.includes('react')) return 'react-vendor'
+          if (id.includes('react-dom')) return 'react-vendor'
+          if (id.includes('/react/')) return 'react-vendor'
           return 'vendor'
         },
       },
