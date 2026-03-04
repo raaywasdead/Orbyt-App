@@ -272,13 +272,16 @@ app.post('/api/signup', authLimiter, regraSignup, validar, async (req, res) => {
 // ──────────────────────────────────────────────
 
 app.post('/api/login', authLimiter, regraLogin, validar, (req, res, next) => {
-    passport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local', (err, usuario, info) => {
         if (err) return res.status(500).json({ sucesso: false, mensagem: 'Erro interno' });
-        if (!user) return res.status(401).json({ sucesso: false, mensagem: info?.mensagem || 'Credenciais inválidas' });
+        if (!usuario) return res.status(401).json({ sucesso: false, mensagem: info?.mensagem || 'Credenciais inválidas' });
 
-        req.login(user, (err) => {
+        req.logIn(usuario, (err) => {
             if (err) return res.status(500).json({ sucesso: false, mensagem: 'Erro ao criar sessão' });
-            res.json({ sucesso: true, mensagem: 'Login realizado com sucesso!', usuario: usuarioSeguro(user) });
+            req.session.save((saveErr) => {
+                if (saveErr) return res.status(500).json({ sucesso: false, mensagem: 'Erro ao salvar sessão' });
+                res.json({ sucesso: true, mensagem: 'Login realizado com sucesso!', usuario: usuarioSeguro(usuario) });
+            });
         });
     })(req, res, next);
 });
