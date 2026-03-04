@@ -776,7 +776,7 @@ body.tema-claro .page-overlay-titulo {
     padding: 20px 16px;
     padding-bottom: 80px; /* Espaço extra para não bloquear o último botão pelo sistema */
     min-height: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
   .page-overlay-body .guia-content {
     padding-bottom: 0;
