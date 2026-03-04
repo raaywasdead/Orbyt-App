@@ -91,7 +91,7 @@ export default function ResetPasswordPage() {
 
     setLoading(true)
     try {
-      const resp = await fetch('https://orbyt-app.up.railway.app', {
+      const resp = await fetch('https://orbyt-app.up.railway.app/api/reset-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token, senha }),

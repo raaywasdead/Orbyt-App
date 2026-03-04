@@ -114,7 +114,7 @@ export default function ProfilePage() {
 
   // Try to enrich nome/email from backend — never overwrites user edits
   useEffect(() => {
-    fetch('https://orbyt-app.up.railway.app', { credentials: 'include' })
+    fetch('https://orbyt-app.up.railway.app/api/me', { credentials: 'include' })
       .then(r => r.ok ? r.json() : null)
       .then(d => {
         if (!d?.usuario) return
@@ -162,7 +162,7 @@ export default function ProfilePage() {
 
   function handleLogout() {
     localStorage.removeItem('orbyt_onboarded')
-    fetch('https://orbyt-app.up.railway.app', { method: 'POST', credentials: 'include' })
+    fetch('https://orbyt-app.up.railway.app/api/logout', { method: 'POST', credentials: 'include' })
       .catch(() => {})
       .finally(() => { window.location.href = '/' })
   }
