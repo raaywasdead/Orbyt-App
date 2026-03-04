@@ -65,7 +65,7 @@ export default function ForgotPasswordPage() {
     if (!email.trim()) { setErro('Informe seu e-mail.'); return }
     setLoading(true)
     try {
-      const resp = await fetch('https://orbyt-app.up.railway.app', {
+      const resp = await fetch('https://orbyt-app.up.railway.app/api/forgot-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
