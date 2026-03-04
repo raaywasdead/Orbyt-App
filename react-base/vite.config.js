@@ -91,6 +91,8 @@ export default defineConfig({
           if (id.includes('react-icons')) return 'react-icons'
           if (id.includes('react-dom')) return 'react-vendor'
           if (id.includes('/react/')) return 'react-vendor'
+          if (id.includes('react-router')) return 'react-vendor'  
+          if (id.includes('scheduler')) return 'react-vendor'     
           return 'vendor'
         },
       },
