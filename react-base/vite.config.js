@@ -79,23 +79,6 @@ export default defineConfig({
     ]
   },
   build: {
-    target: 'esnext',
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (!id.includes('node_modules')) return
-          if (id.includes('@dnd-kit')) return 'dnd-kit'
-          if (id.includes('@tsparticles')) return 'tsparticles'
-          if (id.includes('lucide-react')) return 'lucide'
-          if (id.includes('framer-motion')) return 'framer-motion'
-          if (id.includes('react-icons')) return 'react-icons'
-          if (id.includes('react-dom')) return 'react-vendor'
-          if (id.includes('/react/')) return 'react-vendor'
-          if (id.includes('react-router')) return 'react-vendor'  
-          if (id.includes('scheduler')) return 'react-vendor'     
-          return 'vendor'
-        },
-      },
-    },
-  },
+  target: 'esnext',
+},
 })

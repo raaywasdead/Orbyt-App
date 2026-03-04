@@ -19,6 +19,7 @@ import { preloadServerData, setupSync } from './services/sync'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import ResetPasswordPage  from './pages/ResetPasswordPage';
 
+
 function AppRoutes() {
   const navigate = useNavigate()
 
