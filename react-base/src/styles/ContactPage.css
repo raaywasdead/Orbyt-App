@@ -1,0 +1,311 @@
+/* ============================================================
+   CONTACT PAGE — Orbyt
+   ============================================================ */
+
+.ct-root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #020202;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  animation: ct-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes ct-enter {
+  from { transform: translateY(18px); }
+  to   { transform: translateY(0);    }
+}
+
+/* Background */
+.ct-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.ct-bg::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 500px;
+  background: radial-gradient(circle, rgba(109,40,217,0.12) 0%, transparent 70%);
+  filter: blur(120px);
+  top: -150px; right: -80px;
+}
+
+.ct-bg::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(49,46,129,0.08) 0%, transparent 70%);
+  filter: blur(130px);
+  bottom: -100px; left: -80px;
+}
+
+.ct-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.ct-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+}
+
+.ct-header.scrolled {
+  background: rgba(2,2,2,0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom-color: rgba(168,85,247,0.1);
+}
+
+.ct-header-inner {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ct-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+
+.ct-logo-link img { width: 28px; height: 28px; object-fit: contain; }
+.ct-logo-link span {
+  font-size: 0.98rem; font-weight: 700; color: #fff; letter-spacing: 0.01em;
+}
+
+.ct-btn-back {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: 1px solid rgba(168,85,247,0.35);
+  color: rgba(168,85,247,0.85);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem; font-weight: 600;
+  padding: 6px 16px; border-radius: 99px; cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.ct-btn-back:hover {
+  background: rgba(168,85,247,0.1);
+  border-color: rgba(168,85,247,0.6);
+  color: #c084fc;
+  box-shadow: 0 0 14px rgba(168,85,247,0.16);
+}
+
+/* ── Hero ── */
+.ct-hero {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 56px 40px 40px;
+}
+
+.ct-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a855f7;
+  background: rgba(168,85,247,0.07);
+  border: 1px solid rgba(168,85,247,0.2);
+  padding: 4px 11px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+
+.ct-tag-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #a855f7;
+  box-shadow: 0 0 6px #a855f7;
+  animation: ct-dot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes ct-dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.7; }
+}
+
+.ct-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+.ct-grad {
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 45%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ct-sub {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+}
+
+/* ── Cards ── */
+.ct-cards {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 8px 40px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ct-card {
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 28px 32px;
+  background: rgba(255,255,255,0.02);
+  overflow: hidden;
+  transition: border-color 0.22s, background 0.22s, box-shadow 0.22s;
+  animation: ct-card-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ct-card:nth-child(1) { animation-delay: 0.05s; }
+.ct-card:nth-child(2) { animation-delay: 0.12s; }
+.ct-card:nth-child(3) { animation-delay: 0.19s; }
+
+@keyframes ct-card-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.ct-card:hover {
+  background: rgba(255,255,255,0.035);
+  border-color: rgba(255,255,255,0.12);
+}
+
+
+/* Card top row */
+.ct-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ct-icon-wrap {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.ct-icon-email    { background: rgba(168,85,247,0.12); color: #a855f7; }
+.ct-icon-whatsapp { background: rgba(34,197,94,0.12);  color: #22c55e; }
+.ct-icon-linkedin { background: rgba(59,130,246,0.12); color: #60a5fa; }
+
+.ct-card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.ct-card-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 20px;
+  letter-spacing: -0.01em;
+}
+
+/* Card actions */
+.ct-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ct-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.75);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem; font-weight: 600;
+  padding: 7px 14px; border-radius: 8px; cursor: pointer;
+  text-decoration: none;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+
+.ct-btn-action:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.ct-btn-outline {
+  background: none;
+  border-color: rgba(168,85,247,0.3);
+  color: rgba(168,85,247,0.85);
+}
+
+.ct-btn-outline:hover {
+  background: rgba(168,85,247,0.08);
+  border-color: rgba(168,85,247,0.55);
+  color: #c084fc;
+}
+
+/* Card email active state for copy */
+.ct-card-email:hover { border-color: rgba(168,85,247,0.18); }
+.ct-card-whatsapp:hover { border-color: rgba(34,197,94,0.18); }
+.ct-card-linkedin:hover { border-color: rgba(59,130,246,0.18); }
+
+/* Footer */
+.ct-footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 40px 48px;
+  text-align: center;
+}
+
+.ct-footer span {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.18);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .ct-header-inner { padding: 14px 20px; }
+  .ct-hero { padding: 40px 20px 28px; }
+  .ct-cards { padding: 0 20px 60px; }
+  .ct-footer { padding: 0 20px 40px; }
+  .ct-card { padding: 22px 20px; }
+  .ct-card-value { font-size: 0.95rem; }
+  .ct-card-actions { flex-direction: column; align-items: flex-start; }
+}

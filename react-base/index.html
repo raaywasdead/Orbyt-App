@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Logo-Orbyt.svg" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Orbyt — organize suas tarefas, conquiste badges e evolua sua produtividade." />
+    <meta name="theme-color" content="#050505" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Orbyt — Sua órbita produtiva" />
+    <meta property="og:description" content="Organize tarefas, conquiste badges e evolua sua produtividade. Feito com carinho para quem quer transformar planos em conquistas." />
+    <meta property="og:image" content="/app-preview.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Orbyt — Sua órbita produtiva" />
+    <meta name="twitter:description" content="Organize tarefas, conquiste badges e evolua sua produtividade." />
+    <meta name="twitter:image" content="/app-preview.png" />
+    <!-- Poppins: preconnect + non-blocking stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" />
+    <title>Orbyt</title>
+    <style>
+      body { background-color: #050505; margin: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Filtros SVG para simulação de daltonismo (invisíveis, referenciados via CSS) -->
+    <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Deuteranopia (dificuldade com verde) -->
+        <filter id="daltonismo-deuteranopia">
+          <feColorMatrix type="matrix" values="
+            0.625 0.375 0     0 0
+            0.7   0.3   0     0 0
+            0     0.3   0.7   0 0
+            0     0     0     1 0"/>
+        </filter>
+        <!-- Protanopia (dificuldade com vermelho) -->
+        <filter id="daltonismo-protanopia">
+          <feColorMatrix type="matrix" values="
+            0.567 0.433 0     0 0
+            0.558 0.442 0     0 0
+            0     0.242 0.758 0 0
+            0     0     0     1 0"/>
+        </filter>
+        <!-- Tritanopia (dificuldade com azul) -->
+        <filter id="daltonismo-tritanopia">
+          <feColorMatrix type="matrix" values="
+            0.95  0.05  0     0 0
+            0     0.433 0.567 0 0
+            0     0.475 0.525 0 0
+            0     0     0     1 0"/>
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>

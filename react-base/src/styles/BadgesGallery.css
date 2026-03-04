@@ -1,0 +1,899 @@
+/* ===========================================
+   BADGES GALLERY - REWORK
+   =========================================== */
+
+/* Overlay */
+.badges-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: badges-overlay-in 0.2s ease-out;
+}
+
+@keyframes badges-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.badges-overlay.fechando {
+  animation: badges-overlay-out 0.18s ease-out forwards;
+}
+
+@keyframes badges-overlay-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Modal Principal */
+.badges-modal {
+  background: rgba(10, 10, 14, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 780px;
+  max-height: 88vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(var(--accent-rgb), 0.07);
+  animation: badges-modal-in 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes badges-modal-in {
+  from { opacity: 0; transform: scale(0.92) translateY(24px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.badges-modal.fechando {
+  animation: badges-modal-out 0.18s ease-in forwards;
+}
+
+@keyframes badges-modal-out {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to   { opacity: 0; transform: scale(0.94) translateY(12px); }
+}
+
+/* ── Header ── */
+.badges-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.badges-header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badges-header-icon {
+  color: #fbbf24;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.badges-header h2 {
+  margin: 0 0 2px;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.badges-header p {
+  margin: 0;
+  font-size: 0.82em;
+  color: rgba(255,255,255,0.38);
+}
+
+.badges-close-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badges-close-btn:hover {
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+}
+
+/* ── Progress Hero ── */
+.badges-progress-hero {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 24px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-shrink: 0;
+}
+
+.bph-ring-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.bph-pct {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.06em;
+}
+
+.bph-rarity-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  flex: 1;
+  min-width: 0;
+}
+
+.bph-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 99px;
+  background: rgba(0,0,0,0.22);
+  border: 1px solid color-mix(in srgb, var(--chip-c, #a855f7) 28%, transparent);
+  font-size: 0.72rem;
+  transition: background 0.2s;
+}
+
+.bph-chip:hover { background: rgba(0,0,0,0.35); }
+
+.bph-chip-icon {
+  color: var(--chip-c, #a855f7);
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.bph-chip-label {
+  color: rgba(255,255,255,0.42);
+}
+
+.bph-chip-count {
+  font-weight: 700;
+  color: var(--chip-c, #a855f7);
+}
+
+/* ── Content ── */
+.badges-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px 28px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--accent-rgb), 0.25) transparent;
+}
+
+.badges-content::-webkit-scrollbar { width: 5px; }
+.badges-content::-webkit-scrollbar-thumb { background: rgba(var(--accent-rgb), 0.22); border-radius: 3px; }
+.badges-content::-webkit-scrollbar-track { background: transparent; }
+
+/* ── Section ── */
+.badges-section {
+  margin-bottom: 28px;
+}
+
+.badges-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.badges-section-line {
+  flex: 1;
+  height: 1px;
+  opacity: 0.3;
+  border-radius: 1px;
+}
+
+.badges-section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+/* ── Grid de Badges ── */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 7px;
+}
+
+/* ── Badge Card — horizontal achievement layout ── */
+.badge-card {
+  --badge-color: #555;
+  --badge-glow: transparent;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px 12px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Barra colorida à esquerda */
+.badge-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px; bottom: 10px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--badge-color);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.badge-card.unlocked::before { opacity: 1; }
+
+.badge-card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.11);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.badge-card.unlocked:hover {
+  border-color: color-mix(in srgb, var(--badge-color) 28%, transparent);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25), 0 0 14px color-mix(in srgb, var(--badge-color) 10%, transparent);
+}
+.badge-card.locked { opacity: 0.55; }
+.badge-card.locked:hover { opacity: 0.7; transform: translateY(-1px); }
+
+/* ── Ícone ── */
+.bc-icon-area {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  background: color-mix(in srgb, var(--badge-color) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--badge-color) 22%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--badge-color);
+}
+.bc-mystery {
+  font-size: 1.3rem;
+  opacity: 0.3;
+  font-weight: 900;
+  user-select: none;
+}
+.bc-lock {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0d0d14;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── Conteúdo ── */
+.bc-content { flex: 1; min-width: 0; }
+.bc-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+.bc-name {
+  font-size: 0.88em;
+  font-weight: 700;
+  color: #e2e8f0;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bc-check {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #16a34a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(22,163,74,0.45);
+}
+.bc-nivel-pill {
+  padding: 2px 7px;
+  border-radius: 99px;
+  font-size: 0.68em;
+  font-weight: 900;
+  color: #0d0d14;
+  flex-shrink: 0;
+}
+.bc-desc {
+  font-size: 0.74em;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Progresso evolutivo ── */
+.bc-progress {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 7px;
+}
+.bc-progress-bar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.bc-progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.bc-progress-text {
+  font-size: 0.67em;
+  color: rgba(255,255,255,0.32);
+  white-space: nowrap;
+}
+
+.badge-detail-icon-circle.nivel-6 {
+  border-color: rgba(0,229,255,0.5);
+  animation: badge-detail-pulse-cyan 2s ease-in-out infinite;
+}
+
+@keyframes badge-detail-pulse-cyan {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 6px rgba(0,229,255,0.08), 0 8px 24px rgba(0,0,0,0.4), 0 0 24px rgba(0,229,255,0.25); }
+  50%       { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(0,229,255,0.16), 0 8px 28px rgba(0,0,0,0.4), 0 0 40px rgba(0,229,255,0.45); }
+}
+
+/* ── Footer ── */
+.badges-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px 14px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  flex-shrink: 0;
+}
+
+.badges-footer-icon {
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.badges-footer span {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.28);
+  font-style: italic;
+}
+
+/* ===========================================
+   BADGE DETAIL MODAL
+   =========================================== */
+
+/* page-mode: flui inline dentro do page-overlay-body */
+.badges-modal.badges-page-mode {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  max-height: none;
+  overflow: visible;
+  animation: none;
+  width: 100%;
+  max-width: none;
+}
+
+/* Em page-mode, o fundo da área de conteúdo fica cinza sutil como os outros menus */
+.badges-modal.badges-page-mode .badges-content {
+  background: rgba(255, 255, 255, 0.028);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  overflow: visible;
+  max-height: none;
+  padding: 16px 20px 28px;
+}
+
+.badge-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(6px);
+  animation: badges-overlay-in 0.18s ease-out;
+}
+
+.badge-detail-modal {
+  background: rgba(11, 11, 15, 0.98);
+  border: 1px solid color-mix(in srgb, var(--detail-rarity-color, #a855f7) 40%, transparent);
+  backdrop-filter: blur(24px);
+  border-radius: 20px;
+  width: 92%;
+  max-width: 360px;
+  max-height: 88vh;
+  overflow: hidden;
+  position: relative;
+  animation: badges-modal-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow:
+    0 28px 72px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 0 40px color-mix(in srgb, var(--detail-rarity-color, #a855f7) 15%, transparent);
+}
+
+.badge-detail-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.55);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.18s;
+  z-index: 5;
+}
+
+.badge-detail-close:hover {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+}
+
+/* ── Header ── */
+.badge-detail-header {
+  position: relative;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+
+/* Rarity-specific header backgrounds */
+.badge-detail-header.unlocked.raridade-common   { background: linear-gradient(160deg, rgba(30,32,38,1) 0%, rgba(20,22,28,1) 100%); }
+.badge-detail-header.unlocked.raridade-rare     { background: linear-gradient(160deg, rgba(6,18,32,1) 0%, rgba(4,14,24,1) 100%); }
+.badge-detail-header.unlocked.raridade-epic     { background: linear-gradient(160deg, rgba(18,8,34,1) 0%, rgba(12,6,24,1) 100%); }
+.badge-detail-header.unlocked.raridade-secret   { background: linear-gradient(160deg, rgba(28,18,4,1) 0%, rgba(20,14,4,1) 100%); }
+.badge-detail-header.unlocked.raridade-evolutivo { background: linear-gradient(160deg, rgba(28,6,14,1) 0%, rgba(20,4,10,1) 100%); }
+.badge-detail-header.locked { background: linear-gradient(160deg, rgba(18,18,22,1) 0%, rgba(12,12,16,1) 100%); }
+
+/* Atmospheric glow */
+.badge-detail-header-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 80%, var(--detail-rarity-color, #a855f7) 0%, transparent 100%);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* Circular icon */
+.badge-detail-icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--detail-icon-color, #a855f7);
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--detail-rarity-color, #a855f7) 12%, transparent),
+    0 8px 24px rgba(0,0,0,0.4);
+  animation: badge-detail-pulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 14px var(--detail-icon-color, #a855f7));
+}
+
+.badge-detail-icon-circle.nivel-1 { border-color: rgba(249,168,212,0.4); }
+.badge-detail-icon-circle.nivel-2 { border-color: rgba(244,114,182,0.4); }
+.badge-detail-icon-circle.nivel-3 { border-color: rgba(236,72,153,0.4); }
+.badge-detail-icon-circle.nivel-4 { border-color: rgba(219,39,119,0.4); }
+.badge-detail-icon-circle.nivel-5 { border-color: rgba(251,191,36,0.5); animation: badge-detail-pulse-gold 2s ease-in-out infinite; }
+
+@keyframes badge-detail-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+@keyframes badge-detail-pulse-gold {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 6px rgba(251,191,36,0.08), 0 8px 24px rgba(0,0,0,0.4), 0 0 24px rgba(251,191,36,0.2); }
+  50%       { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(251,191,36,0.14), 0 8px 28px rgba(0,0,0,0.4), 0 0 36px rgba(251,191,36,0.35); }
+}
+
+/* "?" for secret locked */
+.badge-detail-secret-q {
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.2);
+  filter: none;
+  user-select: none;
+}
+
+/* Wrapper for icon + status dot */
+.badge-detail-icon-wrap {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+}
+
+/* Status dot (lock/check) anchored to top-right of icon circle */
+.badge-detail-status-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  z-index: 3;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(11, 11, 15, 0.95);
+}
+
+.badge-detail-status-dot.unlocked {
+  background: #16a34a;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(22,163,74,0.5);
+}
+
+.badge-detail-status-dot.locked {
+  background: rgba(80,80,90,0.9);
+  color: rgba(255,255,255,0.4);
+}
+
+/* Rarity tag at bottom of header */
+.badge-detail-rarity-tag {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--detail-rarity-color, #a855f7);
+  background: rgba(0,0,0,0.3);
+  border: 1px solid color-mix(in srgb, var(--detail-rarity-color, #a855f7) 35%, transparent);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* ── Body ── */
+.badge-detail-body {
+  padding: 18px 20px 20px;
+}
+
+.badge-detail-name {
+  margin: 0 0 8px;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+.badge-detail-desc {
+  text-align: center;
+  font-size: 0.86em;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+/* Section label */
+.badge-detail-section-label {
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 10px;
+}
+
+/* Níveis de Evolução */
+.badge-detail-niveis {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.badge-detail-niveis-title {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.badge-detail-niveis-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.badge-detail-nivel-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 8px;
+  border-left: 3px solid rgba(255,255,255,0.08);
+  transition: all 0.2s;
+}
+
+.badge-detail-nivel-item.alcancado {
+  border-left-color: var(--nivel-cor, #a855f7);
+  background: rgba(255,255,255,0.04);
+}
+
+.nivel-numeral {
+  font-weight: 900;
+  font-size: 0.85em;
+  color: rgba(255,255,255,0.25);
+  min-width: 20px;
+}
+
+.badge-detail-nivel-item.alcancado .nivel-numeral {
+  color: var(--nivel-cor, #a855f7);
+}
+
+.nivel-nome {
+  font-weight: 600;
+  font-size: 0.85em;
+  color: rgba(255,255,255,0.45);
+  flex: 1;
+}
+
+.badge-detail-nivel-item.alcancado .nivel-nome {
+  color: #fff;
+}
+
+.nivel-meta {
+  font-size: 0.74em;
+  color: rgba(255,255,255,0.3);
+}
+
+.nivel-check {
+  color: #4ade80;
+}
+
+/* Progress bar detail */
+.badge-detail-progresso {
+  margin-top: 14px;
+}
+
+.badge-detail-progress-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 7px;
+}
+
+.badge-detail-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.badge-detail-progress-text {
+  text-align: center;
+  font-size: 0.78em;
+  color: rgba(255,255,255,0.35);
+}
+
+/* Status bar */
+.badge-detail-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.84em;
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.badge-detail-status-bar.locked {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.badge-detail-status-bar.unlocked {
+  background: rgba(22,163,74,0.1);
+  color: #4ade80;
+  border: 1px solid rgba(22,163,74,0.2);
+}
+
+/* ===========================================
+   PERÍODOS - MESTRE DO TEMPO
+   =========================================== */
+
+.badge-detail-periodos {
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 14px;
+}
+
+.badge-detail-periodos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.badge-detail-periodo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 9px;
+  transition: all 0.2s ease;
+}
+
+.badge-detail-periodo-item.alcancado {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.28);
+}
+
+.periodo-emoji { font-size: 1.2em; flex-shrink: 0; }
+.periodo-nome { font-weight: 700; color: rgba(255,255,255,0.8); flex: 1; font-size: 0.9em; }
+.periodo-horario { font-size: 0.76em; color: rgba(255,255,255,0.4); font-weight: 500; }
+
+.badge-detail-periodo-item .nivel-check {
+  color: #38bdf8;
+}
+
+.badge-detail-periodos-info {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.82em;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+}
+
+/* ===========================================
+   RESPONSIVO
+   =========================================== */
+
+@media (max-width: 600px) {
+  .badges-modal {
+    width: 96%;
+    max-height: 93vh;
+    border-radius: 16px;
+  }
+
+  .badges-header { padding: 16px 18px 13px; }
+  .badges-header h2 { font-size: 1.05em; }
+
+  .badges-progress-hero {
+    flex-direction: row;
+    gap: 12px;
+    padding: 14px 18px;
+  }
+
+  .bph-ring-wrap { flex-direction: row; gap: 8px; align-items: center; }
+
+  .badges-content { padding: 12px 14px 20px; }
+
+  .badges-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .badge-detail-modal { width: 96%; max-width: none; }
+  .badge-detail-header { height: 130px; }
+  .badge-detail-icon-circle { width: 60px; height: 60px; }
+}
+
+@media (max-width: 480px) {
+  .badges-progress-hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px 14px;
+  }
+
+  .bph-ring-wrap {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .bph-rarity-chips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 100%;
+  }
+
+  .bph-chip {
+    justify-content: center;
+    padding: 5px 8px;
+  }
+}
+
+/* Tema claro */
+body.tema-claro .badge-detail-periodos {
+  background: rgba(56, 189, 248, 0.06);
+  border-color: rgba(56, 189, 248, 0.22);
+}
+
+body.tema-claro .badge-detail-periodo-item {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(56, 189, 248, 0.12);
+}
+
+body.tema-claro .badge-detail-periodo-item.alcancado {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+body.tema-claro .periodo-nome { color: #1a1a1a; }
+body.tema-claro .periodo-horario { color: rgba(0,0,0,0.45); }

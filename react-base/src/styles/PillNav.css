@@ -1,0 +1,76 @@
+.pill-nav {
+  position: relative;
+  display: inline-flex;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.pill-nav-background {
+  position: absolute;
+  top: 4px;
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+  border-radius: 999px;
+  transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow:
+    0 4px 20px rgba(var(--accent-rgb), 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pill-nav-item {
+  position: relative;
+  z-index: 1;
+  padding: 9px 0;
+  width: 112px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  border-radius: 999px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.pill-nav-item:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.pill-nav-item.active {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Tema claro */
+body.tema-claro .pill-nav {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: color-mix(in srgb, var(--accent-color) 40%, transparent);
+}
+
+body.tema-claro .pill-nav-background {
+  background: var(--accent-gradient, linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%));
+  box-shadow: 
+    0 6px 25px var(--accent-shadow, rgba(var(--accent-rgb), 0.5)),
+    0 0 0 1px var(--accent-shadow-border, rgba(var(--accent-rgb), 0.4)),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+body.tema-claro .pill-nav-item {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+body.tema-claro .pill-nav-item:hover {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+body.tema-claro .pill-nav-item.active {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

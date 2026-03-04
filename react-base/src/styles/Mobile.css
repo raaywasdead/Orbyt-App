@@ -1,0 +1,808 @@
+/* ========================================
+   RESPONSIVIDADE MOBILE
+   ======================================== */
+
+/* Previne scroll horizontal em toda a app */
+html, body { overflow-x: hidden; max-width: 100%; }
+
+/* Tablets e telas médias */
+@media (max-width: 768px) {
+  /* Container principal */
+  .container {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+
+  /* Header */
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* Input de adicionar tarefa */
+  .input-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  input[type="text"] {
+    font-size: 16px; /* Previne zoom no iOS */
+  }
+
+  /* Botões de ação */
+  .btn-adicionar {
+    width: 100%;
+  }
+
+  /* Cards de tarefa */
+  li {
+    padding: 16px;
+  }
+
+  /* Modais */
+  .modal {
+    width: 95%;
+    max-width: 95%;
+    margin: 20px;
+  }
+
+  /* Stats modal */
+  .stats-modal {
+    width: 95%;
+    padding: 24px 16px;
+  }
+
+  /* Onboarding */
+  .intro-features-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .intro-heading {
+    font-size: 2rem;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  /* Header */
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  /* Botões flutuantes */
+  .btn-menu-float,
+  .btn-stats-float {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  /* Pills de filtro */
+  .pill-nav {
+    gap: 8px;
+  }
+
+  .pill {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+  }
+
+  /* Tools row */
+  .tools-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tools-row button {
+    width: 100%;
+  }
+
+  /* Cards de tarefa */
+  li {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .task-text {
+    font-size: 0.95rem;
+  }
+
+  /* Ações rápidas */
+  .acoes-rapidas {
+    gap: 6px;
+  }
+
+  .acoes-rapidas button {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  /* Modais */
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 16px 16px 0 0;
+    max-height: 90vh;
+  }
+
+  .modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  /* Menu dropdown */
+  .menu-dropdown {
+    width: 280px;
+  }
+
+  /* Onboarding */
+  .intro {
+    padding: 16px;
+  }
+
+  .intro-heading {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+  }
+
+  .feature-card {
+    padding: 16px;
+  }
+
+  .intro-demo-box {
+    padding: 16px;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+}
+
+/* Telas muito pequenas */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .pill {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  li {
+    padding: 12px;
+  }
+
+  .intro-heading {
+    font-size: 1.25rem;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .modal {
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+
+  .intro-overlay {
+    overflow-y: auto;
+  }
+
+  .intro {
+    padding: 20px 16px;
+  }
+}
+
+/* Touch improvements */
+@media (hover: none) and (pointer: coarse) {
+  /* Aumenta área de toque */
+  button,
+  .pill,
+  li {
+    min-height: 44px; /* Recomendação Apple */
+  }
+
+  /* Remove hover effects em touch */
+  li:hover {
+    transform: none;
+  }
+
+  /* Melhora feedback de toque */
+  button:active,
+  .pill:active {
+    transform: scale(0.95);
+  }
+}
+
+/* ============================================================
+  APP WORKSPACE — LAYOUT MOBILE
+   Sidebar lateral → Bottom Navigation Bar em ≤768px
+   ============================================================ */
+
+/* ── Notebooks largos (≤1024px): pill menor, card full-width ── */
+@media (max-width: 1024px) {
+  .pill-nav-item { width: 100px; }
+  .card { max-width: 100%; }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   TABLETS (≤900px) — iPad Mini (768px), iPad Air 4 (820px),
+                       iPad Pro 11 (834px)
+   Sidebar vira DRAWER nesta faixa (igual ao mobile).
+   Float buttons já são position:fixed e funcionam como hambúrguer.
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  /* ── Conteúdo ── */
+  .main-content { padding: 40px 20px 32px; width: 100% !important; }
+  .card { max-width: 100%; }
+  .input-container { padding: 18px 18px 16px; }
+  .workspace-topbar h1 { font-size: 1.5rem; }
+  .pill-nav-item { width: 94px; font-size: 0.81rem; }
+
+  /* ── Sidebar: vira drawer fixo ── */
+  .sidebar {
+    position: fixed !important;
+    top: 0 !important; left: 0 !important; bottom: 0 !important; right: auto !important;
+    width: 260px !important;
+    height: 100% !important;
+    flex-direction: column !important;
+    transform: translateX(calc(-100% + 5px));
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 900 !important;
+    overflow: hidden !important;
+    border-right: none !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+  }
+  .sidebar.mobile-open { transform: translateX(0); }
+
+  /* ── Aba lateral (arraste para abrir) ── */
+  .sidebar-edge-tab {
+    display: block;
+    position: absolute;
+    right: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 5px; height: 52px;
+    background: rgba(168, 85, 247, 0.45);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer; z-index: 10;
+    transition: opacity 0.2s;
+  }
+  .sidebar.mobile-open .sidebar-edge-tab { opacity: 0.5; }
+
+  /* ── Estrutura do drawer ── */
+  .sidebar-header { display: flex !important; }
+  .sidebar-footer { display: flex !important; }
+  .sidebar-toggle { display: none !important; }
+
+  .sidebar-nav, .sidebar .sidebar-nav {
+    flex-direction: column !important;
+    padding: 8px !important; gap: 2px !important;
+    height: auto !important; flex: 1 !important;
+    overflow-y: auto !important; overflow-x: hidden !important;
+    justify-content: flex-start !important; align-items: stretch !important;
+    scrollbar-width: none !important;
+  }
+  .sidebar-nav::-webkit-scrollbar, .sidebar .sidebar-nav::-webkit-scrollbar { display: none !important; }
+  .sidebar .sidebar-item {
+    flex-direction: row !important; width: 100% !important;
+    height: auto !important; flex: unset !important;
+    padding: 10px 14px !important; border-radius: 10px !important;
+    justify-content: flex-start !important; align-items: center !important;
+    gap: 10px !important; min-height: 44px !important;
+  }
+  .sidebar .sidebar-item-label,
+  .sidebar .sidebar-app-name,
+  .sidebar .sidebar-streak-info { display: block !important; opacity: 1 !important; }
+  .sidebar .sidebar-item.active { background: rgba(168, 85, 247, 0.12) !important; box-shadow: none !important; }
+  .sidebar .sidebar-item.active::before { display: none !important; }
+  .sidebar .sidebar-item::after        { display: none !important; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   DRAWER SIDEBAR — Sidebar vira drawer deslizante (≤768px)
+   ════════════════════════════════════════════════════════════ */
+
+/* Backdrop — invisível por padrão */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 899;
+}
+.sidebar-backdrop.visible {
+  display: block;
+}
+
+/* Aba lateral — oculta no desktop */
+.sidebar-edge-tab {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* ── Sidebar: fechada mostra só a aba (5px) ── */
+  .sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: auto !important;
+    width: 260px !important;
+    height: 100% !important;
+    flex-direction: column !important;
+    transform: translateX(calc(-100% + 5px));
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 900 !important;
+    overflow: hidden !important;
+    border-right: none !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* ── Aba lateral — dentro do aside, na borda direita ── */
+  .sidebar-edge-tab {
+    display: block;
+    position: absolute;
+    right: 0;           /* dentro do layout box do aside */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 52px;
+    background: rgba(168, 85, 247, 0.45);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    z-index: 10;
+    transition: opacity 0.2s;
+  }
+
+  /* Aba permanece visível quando sidebar está aberta (indica q dá pra arrastar de volta) */
+  .sidebar.mobile-open .sidebar-edge-tab {
+    opacity: 0.5;
+  }
+
+  /* Restaura header e footer no drawer */
+  .sidebar-header { display: flex !important; }
+  .sidebar-footer { display: flex !important; }
+  .sidebar-toggle { display: none !important; }
+
+  /* Nav vertical */
+  .sidebar-nav,
+  .sidebar .sidebar-nav {
+    flex-direction: column !important;
+    padding: 8px !important;
+    gap: 2px !important;
+    height: auto !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    scrollbar-width: none !important;
+  }
+  .sidebar-nav::-webkit-scrollbar,
+  .sidebar .sidebar-nav::-webkit-scrollbar { display: none !important; }
+
+  /* Items em linha (ícone + label) */
+  .sidebar .sidebar-item {
+    flex-direction: row !important;
+    width: 100% !important;
+    height: auto !important;
+    flex: unset !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 10px !important;
+    min-height: 44px !important;
+  }
+
+  /* Labels visíveis no drawer */
+  .sidebar .sidebar-item-label,
+  .sidebar .sidebar-app-name,
+  .sidebar .sidebar-streak-info {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  /* Item ativo */
+  .sidebar .sidebar-item.active {
+    background: rgba(168, 85, 247, 0.12) !important;
+    box-shadow: none !important;
+  }
+
+  /* Remove indicadores legados */
+  .sidebar .sidebar-item.active::before { display: none !important; }
+  .sidebar .sidebar-item::after        { display: none !important; }
+
+  /* Main content: largura total */
+  .main-content {
+    padding: 18px 16px 24px !important;
+    width: 100% !important;
+    height: 100vh !important;
+  }
+
+  .card { max-width: 100%; padding: 0; }
+
+  /* Topbar */
+  .workspace-topbar { align-items: center; gap: 10px; margin-bottom: 4px; }
+  .workspace-topbar h1 { font-size: 1.5rem; }
+
+  /* PillNav */
+  .pill-nav-item { width: 90px; font-size: 0.82rem; padding: 8px 0; }
+  .filtros .pill-nav-item { border: none !important; background: transparent !important; border-radius: 999px !important; }
+
+  /* Floating buttons */
+  .btn-menu-float  { top: 16px; right: 16px;  width: 40px; height: 40px; font-size: 17px; }
+  .btn-stats-float { top: 16px; right: 64px;  width: 40px; height: 40px; font-size: 17px; }
+  .btn-badges-float{ top: 16px; right: 112px; width: 40px; height: 40px; font-size: 17px; }
+
+  /* Streak widget */
+  .streak-widget { top: 16px; left: 16px; padding: 7px 12px; gap: 8px; border-radius: 12px; }
+
+  /* ── Desabilitar animações de slide de página (só desktop) ── */
+  .page-overlay {
+    transition: none !important;
+  }
+  .card.panel-exiting {
+    animation: none !important;
+  }
+  .card.panel-entering {
+    animation: none !important;
+  }
+}
+
+/* ════════════════════════════════════════════════
+   CONTEÚDO — Ajustes para telas estreitas (≤640px)
+   ════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .filtros {
+    flex-direction: row !important;
+    overflow-x: hidden !important;
+    gap: 0;
+  }
+
+  /* Pills sempre preenchem o espaço disponível — evita gap à direita */
+  .pill-nav { overflow-x: hidden; max-width: 100%; width: 100%; }
+  .pill-nav-item { flex: 1 !important; min-width: 0 !important; width: auto !important; font-size: 0.8rem; text-align: center; }
+
+  .tools-row.dupla { grid-template-columns: 1fr; }
+
+  .input-top { flex-direction: column; gap: 10px; }
+  .input-top .btn-adicionar,
+  .input-top input,
+  .input-top .btn-microfone { width: 100%; }
+  .input-top .btn-microfone { justify-content: center; }
+
+  /* BUG FIX: flex: 1 1 320px no input vira height: 320px em layout coluna.
+     Força height natural e zera o flex-basis no eixo vertical. */
+  .input-top input {
+    flex: 0 0 auto !important;
+    height: auto !important;
+  }
+
+  /* Input-extra: GRID 3 colunas iguais.
+     Filhos diretos: .prioridade-container, .local-container, .btn-lote.
+     btn-prioridade e btn-local ficam DENTRO dos containers (não são
+     grid-items diretos), então os containers viram flex-column para
+     o botão interno preencher a mesma altura que o btn-lote. */
+  .input-extra {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    gap: 6px !important;
+    justify-content: unset !important;
+  }
+  /* Containers viram flex-column: botão interno preenche a célula */
+  .input-extra .prioridade-container,
+  .input-extra .local-container {
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative;
+  }
+  /* Todos os botões preenchem 100% da célula (flex: 1 age nos filhos flex,
+     e é no-op para .btn-lote que já é grid-item com align-items:stretch) */
+  .input-extra .btn-prioridade,
+  .input-extra .btn-local,
+  .input-extra .btn-lote {
+    width: 100% !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    font-size: 0.78rem !important;
+    padding: 7px 10px !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .lote-acoes { flex-wrap: wrap; gap: 8px; }
+  .lote-acoes-dir { flex: 1; flex-wrap: wrap; }
+  .btn-lote-confirmar { min-width: 0; flex: 1; }
+  .btn-lote-cancelar { flex: 1; min-width: 80px; }
+}
+
+/* ════════════════════════════════════════════════
+   LOTE PANEL — Mobile estreito (≤480px)
+   Empilha os botões para evitar texto cortado
+   ════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .lote-acoes {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+  }
+  .lote-acoes-esq,
+  .lote-acoes-dir {
+    width: 100% !important;
+    flex: none !important;
+    justify-content: stretch !important;
+  }
+  .lote-acoes-dir {
+    display: flex !important;
+    gap: 6px !important;
+  }
+  .btn-lote-confirmar,
+  .btn-lote-cancelar {
+    flex: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+  }
+  .lote-ajuda-toggle {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   SMARTPHONES — Breakpoints por grupo de dispositivo
+
+   Tabela de larguras CSS (viewport px, portrait):
+   ─────────────────────────────────────────────────────────────────
+   320px  iPhone 5, SE 1ª geração
+   360px  Samsung Galaxy S20 / S22 / S23 / S24, Galaxy A12,
+          Huawei P30 Pro, OnePlus Nord 2, OPPO Find X3 Pro,
+          Galaxy Z Flip3 / Flip6
+   375px  iPhone SE (2020/2022), iPhone X, iPhone 11 Pro,
+          iPhone 12 mini, iPhone 13 mini
+   390px  iPhone 12 / 12 Pro / 13 / 13 Pro / 14 / 16 / 16e,
+          Samsung Galaxy S22+ / S23+
+   393px  iPhone 14 Pro / 15 / 15 Pro / 16 Pro,
+          Google Pixel 5 / 8, Xiaomi Mi 11i / 12
+   412px  Galaxy Note20 Ultra, S21/S22/S24 Ultra,
+          Google Pixel 6 Pro / 7 / 7 Pro / 8 Pro
+   414px  iPhone 11, iPhone XR, iPhone 11 Pro Max
+   420px  iPhone 17 Air
+   428px  iPhone 12/13 Pro Max, 14/15/16 Plus
+   430px  iPhone 14/15/16 Pro Max
+   440px  iPhone 17 Pro Max
+   ─────────────────────────────────────────────────────────────────
+   Cascata de breakpoints (max-width, cada nível herda do maior):
+   ≤480px → ≤430px → ≤414px → ≤393px → ≤375px → ≤360px → ≤320px
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── Base geral smartphones (431–480px)
+   Cobre: iPhone 17 Air (420px), iPhone 17 Pro Max (440px) ── */
+@media (max-width: 480px) {
+  .main-content { padding: 14px 12px 24px !important; }
+
+  .workspace-topbar { gap: 8px; align-items: center; margin-bottom: 2px; }
+  .workspace-topbar h1 { font-size: 1.25rem; }
+  .workspace-date { font-size: 0.7rem; }
+
+  .pill-nav-item { font-size: 0.77rem; padding: 7px 0; }
+
+  .task-view { gap: 8px; }
+  .task-toggle { gap: 10px; min-width: 0; }
+  .task-text { font-size: 0.91rem; line-height: 1.4; }
+  .task-prio-tag { font-size: 0.61rem; padding: 2px 7px; }
+
+  .task-meta-chip { font-size: 0.74rem; padding: 4px 8px; max-width: 160px; gap: 4px; }
+  .task-meta-chip svg { width: 12px; height: 12px; }
+
+  .btn-task-menu { width: 32px; height: 32px; }
+  .task-checkbox { width: 22px; height: 22px; min-width: 22px; }
+
+  .grupo-cabecalho span { font-size: 0.92rem; }
+  .grupo-cabecalho { gap: 10px; }
+  .controls { padding-top: 14px; gap: 10px; }
+
+  .btn-menu-float  { top: 12px; right: 12px;  width: 38px; height: 38px; font-size: 16px; }
+  .btn-stats-float { top: 12px; right: 58px;  width: 38px; height: 38px; font-size: 16px; }
+  .btn-badges-float{ top: 12px; right: 104px; width: 38px; height: 38px; font-size: 16px; }
+
+  .streak-widget { top: 12px; left: 12px; padding: 6px 10px; gap: 7px; border-radius: 10px; }
+  .streak-icon { width: 26px; height: 26px; border-radius: 8px; }
+  .btn-profile { width: 32px; height: 32px; flex-shrink: 0; }
+}
+
+/* ── iPhones grandes + Android flagship (≤430px)
+   iPhone 14/15/16 Pro Max (430px), 13/14/15/16 Plus (428px),
+   12/13 Pro Max (428px), Galaxy Note20 Ultra / S21/S22 Ultra /
+   Pixel 6 Pro / 7 / 7 Pro / 8 Pro (412px) ── */
+@media (max-width: 430px) {
+  .task-meta-chip { max-width: 155px; }
+}
+
+/* ── iPhone 11 / XR / 11 Pro Max (≤414px) ── */
+@media (max-width: 414px) {
+  .task-meta-chip { max-width: 152px; }
+}
+
+/* ── iPhone 14 Pro / 15 / 15 Pro / 16 Pro + Pixel 5/8 / Xiaomi (≤393px)
+   iPhone 12/13/14/16 standard + Samsung S22+/S23+ (390px) também aqui ── */
+@media (max-width: 393px) {
+  .main-content { padding: 14px 11px 24px !important; }
+
+  .pill-nav-item { font-size: 0.76rem; }
+
+  .task-meta-chip { max-width: 146px; }
+
+  .btn-menu-float  { top: 12px; right: 11px;  }
+  .btn-stats-float { top: 12px; right: 56px;  }
+  .btn-badges-float{ top: 12px; right: 101px; }
+}
+
+/* ── iPhone SE (2020/2022) / X / 11 Pro / 12 mini / 13 mini (≤375px) ── */
+@media (max-width: 375px) {
+  .main-content { padding: 12px 10px 24px !important; overflow-x: hidden; }
+
+  .workspace-topbar h1 { font-size: 1.15rem; }
+  .workspace-date { font-size: 0.67rem; }
+
+  /* Pill nav: flex: 1 garante que os 3 itens cabem sem scroll horizontal */
+  .filtros { overflow-x: hidden !important; }
+  .pill-nav { overflow-x: hidden !important; width: 100% !important; }
+  .pill-nav-item {
+    flex: 1 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    font-size: 0.73rem !important;
+    padding: 6px 4px !important;
+    text-align: center;
+  }
+
+  .task-text { font-size: 0.89rem; }
+  .task-meta-chip { max-width: 136px; font-size: 0.71rem; }
+
+  .btn-menu-float  { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 15px; }
+  .btn-stats-float { top: 10px; right: 53px; width: 36px; height: 36px; }
+  .btn-badges-float{ top: 10px; right: 96px; width: 36px; height: 36px; }
+
+  .streak-widget { top: 10px; left: 10px; padding: 5px 9px; gap: 6px; }
+  .btn-profile { width: 30px; height: 30px; }
+}
+
+/* ── Samsung S20/S22/S23/S24 + Android compact (≤360px)
+   Galaxy A12, Huawei P30 Pro, OnePlus Nord 2,
+   OPPO Find X3 Pro, Galaxy Z Flip3 ── */
+@media (max-width: 360px) {
+  .main-content { padding: 12px 10px 24px !important; }
+
+  .workspace-topbar h1 { font-size: 1.1rem; }
+  .workspace-date { font-size: 0.65rem; }
+
+  .pill-nav-item { font-size: 0.73rem; padding: 6px 0; }
+  .task-prio-tag { display: none; }
+
+  .task-meta-chip { font-size: 0.68rem; padding: 3px 7px; max-width: 128px; }
+  .grupo-cabecalho span { font-size: 0.85rem; }
+
+  .btn-menu-float  { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 15px; }
+  .btn-stats-float { top: 10px; right: 52px; width: 36px; height: 36px; }
+  .btn-badges-float{ top: 10px; right: 94px; width: 36px; height: 36px; }
+
+  /* Input-container menor + caret escondido: evita "Neutra" escapar do card */
+  .input-container { gap: 8px; margin-bottom: 16px; padding: 14px 14px 12px !important; overflow: visible; }
+  .prioridade-caret { display: none !important; }
+  .input-extra .btn-prioridade,
+  .input-extra .btn-local,
+  .input-extra .btn-lote { font-size: 0.72rem !important; padding: 6px 8px !important; }
+}
+
+/* ── Dispositivos muito antigos: iPhone 5, SE 1ª gen (≤320px) ── */
+@media (max-width: 320px) {
+  .main-content { padding: 10px 8px 20px !important; }
+  .workspace-topbar h1 { font-size: 1rem; }
+  .pill-nav-item { font-size: 0.7rem; padding: 5px 0; }
+  .task-text { font-size: 0.85rem; }
+  .task-meta-chip { max-width: 108px; font-size: 0.64rem; }
+  .btn-menu-float  { top: 8px; right: 8px;  width: 34px; height: 34px; }
+  .btn-stats-float { top: 8px; right: 48px; width: 34px; height: 34px; }
+  .btn-badges-float{ top: 8px; right: 88px; width: 34px; height: 34px; }
+  /* Padding ainda menor no input-container para dar espaço às colunas */
+  .input-container { padding: 12px 12px 10px !important; }
+}
+
+
+/* ════════════════════════════════════════════════
+   BADGE UNLOCK POPUP — alinhado ao topo no mobile
+   ════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Em mobile o popup ocupa toda a largura e fica colado no topo */
+  .badge-unlock-popup {
+    left: 10px !important;
+    right: 10px !important;
+    top: 8px !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+/* ════════════════════════════════════════════════
+   LANDSCAPE MOBILE — drawer não bloqueia conteúdo
+   ════════════════════════════════════════════════ */
+@media (max-width: 768px) and (orientation: landscape) {
+  .sidebar {
+    width: 220px !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .task-dropdown-menu {
+    right: 0;
+    left: auto !important;
+  }
+
+  .main-content {
+    overflow-x: hidden !important;
+  }
+
+  .card {
+    overflow-x: hidden !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Painel saindo fica atrás do que está entrando */
+  .card.panel-exiting {
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Painel ativo sempre na frente */
+  .card.panel-entering,
+  .page-overlay-active .card {
+    z-index: 2 !important;
+  }
+
+  /* Pill nav background nunca sobrepõe painéis */
+  .pill-nav-background {
+    z-index: 0 !important;
+  }
+}
+
+@media (max-width: 376px) {
+  .pill-nav {
+    overflow: hidden !important;
+  }
+}
+@media (max-width: 340px) {
+  .bph-rarity-chips {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .local-dropdown {
+    width: calc(100vw - 32px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    right: auto !important;
+  }
+}
+

@@ -1,0 +1,139 @@
+/* ============================================================
+   404 NOT FOUND — Orbyt
+   ============================================================ */
+
+.nf-root {
+  width: 100%;
+  min-height: 100vh;
+  background: #020202;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  animation: nf-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes nf-enter {
+  from { transform: translateY(20px); }
+  to   { transform: translateY(0); }
+}
+
+/* Background com dots + glow */
+.nf-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.nf-bg::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(109,40,217,0.10) 0%, transparent 65%);
+  filter: blur(140px);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Body */
+.nf-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 24px;
+  max-width: 420px;
+}
+
+/* Satélite animado */
+.nf-satellite {
+  margin-bottom: 32px;
+  animation: nf-float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 18px rgba(168,85,247,0.3));
+}
+
+@keyframes nf-float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%       { transform: translateY(-14px) rotate(4deg); }
+}
+
+/* Código 404 */
+.nf-code {
+  font-size: clamp(4rem, 18vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  background: linear-gradient(135deg, rgba(192,132,252,0.6) 0%, rgba(168,85,247,0.8) 50%, rgba(109,40,217,0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+
+.nf-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.nf-sub {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.42);
+  margin: 0 0 32px;
+}
+
+/* Botões */
+.nf-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nf-btn-primary {
+  background: linear-gradient(135deg, #9333ea, #7c3aed);
+  border: none;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 18px rgba(147,51,234,0.35);
+}
+
+.nf-btn-primary:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 28px rgba(147,51,234,0.55);
+}
+
+.nf-btn-ghost {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.5);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.nf-btn-ghost:hover {
+  border-color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.8);
+}

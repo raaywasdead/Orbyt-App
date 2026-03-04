@@ -1,0 +1,454 @@
+{
+  "landing": {
+    "nav": {
+      "features": "Tools",
+      "how": "How to use",
+      "preview": "Preview",
+      "enter": "Sign in",
+      "create": "Sign up",
+      "startNow": "Get started",
+      "navLabel": "Navigate",
+      "startLabel": "Start"
+    },
+    "hero": {
+      "tag": "Your productive orbit",
+      "title1": "Organize.",
+      "title2": "Evolve.",
+      "title3": "Conquer.",
+      "sub": "Your personal productivity system — tasks, progress and rewards built for those who take it seriously.",
+      "cta": "Get started",
+      "explore": "Explore features"
+    },
+    "features": {
+      "tag": "Tools",
+      "title": "Built for your flow",
+      "sub": "Tools that adapt to the way you work, not the other way around.",
+      "card0": { "title": "Task management", "desc": "Priorities, categories, bulk entry and drag to reorder. Your workflow, your way." },
+      "card1": { "title": "Badge system", "desc": "Real achievements unlocked by consistency and volume. Progress you can see." },
+      "card2": { "title": "Themes & customization", "desc": "Interface adapted to your visual identity. Colors, logo and style that match you." },
+      "card3": { "title": "Statistics", "desc": "Understand your patterns and track your evolution. Data that reveals your real habits." },
+      "card4": { "title": "Voice control", "desc": "Add tasks by speaking, without taking your eyes off what matters. Hands-free productivity." },
+      "card5": { "title": "Deadlines & Priorities", "desc": "Organize by urgency, set deadlines and see what needs your attention right now." }
+    },
+    "how": {
+      "tag": "First steps",
+      "title1": "Build. Track.",
+      "title2": "Conquer.",
+      "step0": {
+        "title": "Build your routine",
+        "desc": "Organize your tasks by priority and category. Adapt the system to your workflow — not the other way around."
+      },
+      "step1": {
+        "title": "Build consistency",
+        "desc": "Your progress is tracked day by day. Streaks, completion patterns and regularity you can actually feel."
+      },
+      "step2": {
+        "title": "Reap the rewards",
+        "desc": "Badges and achievements that reflect what you actually accomplished. Motivation based on concrete results."
+      }
+    },
+    "preview": {
+      "tag": "In practice",
+      "title": "Inside the app",
+      "sub": "A clean interface that gets out of the way and lets you focus.",
+      "cta": "Try it now"
+    },
+    "cta": {
+      "tag": "Start now",
+      "title": "Ready for your",
+      "highlight": "productive orbit?",
+      "sub": "Set up in minutes. See the difference on the first day.",
+      "btn": "Create free account"
+    },
+    "footer": {
+      "made": "Made with love to help you be more productive.",
+      "copy": "© 2026 Orbyt. All rights reserved."
+    }
+  },
+  "login": {
+    "back": "Back",
+    "tabs": {
+      "login": "Sign in",
+      "signup": "Create account"
+    },
+    "fields": {
+      "email": "Email",
+      "password": "Password",
+      "name": "Name",
+      "confirmPassword": "Confirm password"
+    },
+    "placeholders": {
+      "email": "your@email.com",
+      "password": "••••••••",
+      "name": "Your name",
+      "minPassword": "Minimum 8 characters",
+      "repeatPassword": "Repeat password"
+    },
+    "forgot": "Forgot my password",
+    "loginBtn": "Sign in",
+    "signupBtn": "Create account",
+    "notice": {
+      "loginPrefix": "By signing in you agree to our",
+      "signupPrefix": "By creating an account you agree to our",
+      "terms": "Terms of use",
+      "and": "and",
+      "privacy": "Privacy policy"
+    },
+    "showPass": "Show password",
+    "hidePass": "Hide password",
+    "error": {
+      "connection": "Server connection error"
+    },
+    "success": {
+      "title": "All good!",
+      "sub": "Entering your orbit…"
+    },
+    "welcome": {
+      "title": "Welcome to",
+      "brand": "Orbyt",
+      "sub": "Your productive orbit starts now.",
+      "subMuted": "Organize. Evolve. Conquer.",
+      "cta": "Enter the universe"
+    }
+  },
+  "sidebar": {
+    "tasks": "Tasks",
+    "stats": "Statistics",
+    "badges": "Badges",
+    "themes": "Themes",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About",
+    "expand": "Expand sidebar",
+    "collapse": "Collapse sidebar",
+    "expandShort": "Expand",
+    "collapseShort": "Collapse",
+    "dayStreak": "day streak",
+    "daysStreak": "day streak"
+  },
+  "app": {
+    "title": "Task List",
+    "input": {
+      "placeholder": "Type a new task...",
+      "add": "Add",
+      "batch": "Bulk",
+      "local": "Category",
+      "localLabel": "Default category",
+      "localPlaceholder": "e.g.: kitchen",
+      "localApply": "Apply",
+      "localClose": "Close",
+      "micHold": "Hold",
+      "micRecording": "Recording...",
+      "micLabel": "Hold to speak the task",
+      "batchAdd": "Add lines",
+      "batchClose": "Close",
+      "batchMiniGuide": "Mini guide",
+      "batchPlaceholder": "Type multiple tasks, one per line. E.g.: kitchen: make dinner. Press \"Add lines\"."
+    },
+    "priority": {
+      "ariaLabel": "Select priority with arrow keys",
+      "neutral": "Neutral",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "filters": {
+      "all": "All",
+      "pending": "Pending",
+      "done": "Completed"
+    },
+    "sort": {
+      "label": "Sort",
+      "manual": "Manual",
+      "priority": "Priority",
+      "deadline": "Deadline",
+      "newest": "Created (newest)",
+      "oldest": "Created (oldest)",
+      "az": "A → Z",
+      "za": "Z → A",
+      "manualShort": "Manual",
+      "priorityShort": "Priority",
+      "deadlineShort": "Deadline",
+      "newestShort": "Newest",
+      "oldestShort": "Oldest"
+    },
+    "stats": {
+      "pending": "pending",
+      "pendentes": "pending",
+      "done": "completed",
+      "donePlural": "completed"
+    },
+    "actions": {
+      "clearDone": "Clear Completed",
+      "clearAll": "Remove all",
+      "searchPlaceholder": "Search by task, category or note…",
+      "searchLabel": "Search tasks"
+    },
+    "empty": {
+      "noPending": "All clear!",
+      "noPendingSub": "You've completed every task. Perfect orbit.",
+      "noDone": "Nothing completed yet.",
+      "noDoneSub": "Complete tasks and they'll show up here.",
+      "noTasks": "Empty orbit.",
+      "noTasksSub": "Add your first task and set your plans in motion."
+    },
+    "toast": {
+      "taskDeleted": "Task removed",
+      "taskDeletedSuffix": "was removed",
+      "undo": "Undo",
+      "tasksCleaned": "Tasks cleared"
+    },
+    "badge": {
+      "unlocked": "✦ Achievement Unlocked",
+      "common": "● Common",
+      "rare": "● Rare",
+      "epic": "✦ Epic",
+      "secret": "◆ Secret",
+      "special": "★ Special"
+    },
+    "pages": {
+      "tasks": "Tasks",
+      "stats": "Statistics",
+      "themes": "Visual Themes",
+      "settings": "Settings",
+      "badges": "Achievements",
+      "about": "About",
+      "help": "Help Center"
+    },
+    "about": {
+      "tagline": "Your productivity manager",
+      "madeBy": "Developed by"
+    },
+    "overdue": {
+      "badge": "Overdue",
+      "one": "overdue",
+      "many": "overdue",
+      "notif": "You have {{count}} overdue task.",
+      "notifMany": "You have {{count}} overdue tasks.",
+      "dismiss": "Dismiss"
+    },
+    "onboarding": {
+      "startTour": "See Quick Tour",
+      "skip": "Skip and Start",
+      "skipTour": "Skip tour",
+      "back": "Back",
+      "next": "Next",
+      "finish": "Start Now",
+      "hero": {
+        "welcome": "Welcome to",
+        "sub": "Task manager with visual intelligence, achievements and total customization.",
+        "pill1": "Drag & Drop",
+        "pill2": "Priorities",
+        "pill3": "Achievements",
+        "pill4": "Themes",
+        "pill5": "Statistics"
+      },
+      "step1": {
+        "label": "Drag & Drop",
+        "title": "Drag and Organize",
+        "desc": "Click, hold and drag any task to reposition it. The order is yours.",
+        "tip": "Available in \"Manual\" sort mode",
+        "card1": "Finalize report",
+        "card2": "Review pull request",
+        "card3": "Alignment meeting"
+      },
+      "step2": {
+        "label": "Priorities",
+        "title": "Urgency in Colors",
+        "desc": "Classify what matters. High, Medium, Low or Neutral — visually distinct.",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low",
+        "neutral": "Neutral",
+        "tip": "Set when creating or editing a task"
+      },
+      "step3": {
+        "label": "Statistics",
+        "title": "Track your Rhythm",
+        "desc": "Completion rate, consecutive day streaks and detailed history.",
+        "labelRate": "completion",
+        "labelDays": "day streak",
+        "labelDone": "completed",
+        "labelCats": "categories",
+        "tip": "Access via Statistics in the sidebar"
+      },
+      "step4": {
+        "label": "Features",
+        "title": "Everything in its Place",
+        "desc": "Deadlines, notes, categories, search, filters, themes and unlockable achievements.",
+        "deadlines": "Deadlines",
+        "deadlinesDesc": "Task due dates",
+        "notes": "Notes",
+        "notesDesc": "Detailed annotations",
+        "achievements": "Achievements",
+        "achievementsDesc": "20+ unlockable badges",
+        "themes": "Themes",
+        "themesDesc": "6 visual palettes",
+        "accessibility": "Accessibility",
+        "accessibilityDesc": "8 adaptive profiles",
+        "voice": "Voice",
+        "voiceDesc": "Microphone commands",
+        "tip": "Explore settings to customize"
+      }
+    },
+    "guide": {
+      "getting": "Getting Started",
+      "organization": "Organization",
+      "customization": "Customization",
+      "features": "Features",
+      "createTask": "Create task",
+      "createTaskDesc": "Type in the field and press Enter or click the add button",
+      "completeTask": "Complete task",
+      "completeTaskDesc": "Click the circle to the left of the task to mark it as completed",
+      "editTask": "Edit task",
+      "editTaskDesc": "Double-click the text to enter edit mode",
+      "categories": "Categories",
+      "categoriesDesc": "Use category: task or task #category",
+      "priorities": "Priorities",
+      "prioritiesDesc": "Set urgency levels: High, Medium, Low or Neutral",
+      "bulkInput": "Bulk entry",
+      "bulkInputDesc": "Paste multiple tasks at once, separated by line",
+      "reorder": "Reordering",
+      "reorderDesc": "Drag tasks by the side icon to reorganize",
+      "themes": "Visual themes",
+      "themesDesc": "6 themes available with unique color schemes",
+      "customLogo": "Custom logo",
+      "customLogoDesc": "Unlock to customize the image and color of the logo",
+      "accessibility": "Accessibility",
+      "accessibilityDesc": "8 profiles adapted to different needs",
+      "achievements": "Achievements",
+      "achievementsDesc": "Unlock badges by completing special challenges",
+      "shortcuts": "Keyboard Shortcuts",
+      "statistics": "Statistics",
+      "statisticsDesc": "Track your progress with detailed metrics",
+      "dailyGoal": "Daily goal",
+      "dailyGoalDesc": "Set how many tasks you want to complete per day",
+      "animations": "Animations",
+      "animationsDesc": "Visual celebrations when completing tasks",
+      "shortcutAdd": "Add task",
+      "shortcutCancel": "Cancel editing",
+      "shortcutPaste": "Paste multiple tasks",
+      "saveNote": "Your tasks are automatically saved in the browser. Data persists even after closing the page.",
+      "noteImportant": "Important:"
+    },
+    "batchGuide": {
+      "title": "Mini guide (Bulk)",
+      "sub": "Click copy to paste wherever you want.",
+      "oneLine": "One line = one task",
+      "oneLineDesc": "Each Enter creates a task. The app understands headers and categories.",
+      "tagCat": "Category by tag",
+      "tagCatDesc": "Write the task and end with #category (or @category).",
+      "prefixCat": "Category by prefix",
+      "prefixCatDesc": "Use \"category: task\" (or \"category | task\").",
+      "parenLoc": "Location in parentheses",
+      "parenLocDesc": "Use \"(location)\" at the end of the task.",
+      "groupHeader": "Group header",
+      "groupHeaderDesc": "Sets the \"active\" category for the next lines.",
+      "alternatives": "Alternatives",
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "modal": {
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "save": "Save",
+      "clearDone": {
+        "title": "Clear completed",
+        "body": "Are you sure you want to remove all completed tasks? This action cannot be undone."
+      },
+      "removeAll": {
+        "title": "Remove all",
+        "body": "Are you sure you want to remove all tasks? This action cannot be undone."
+      }
+    },
+    "details": {
+      "ariaLabel": "Task details",
+      "title": "Details",
+      "closeLabel": "Close details",
+      "taskFallback": "Task",
+      "noCategory": "No category",
+      "categoryPrefix": "Category: ",
+      "deadline": "Deadline",
+      "notes": "Notes",
+      "datePlaceholder": "mm/dd/yyyy",
+      "notesPlaceholder": "Note details about this task…",
+      "calendarLabel": "Open calendar",
+      "statsTitle": "Statistics",
+      "statsCloseLabel": "Close statistics"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "sub": "Customize your experience the way you prefer",
+    "close": "Close",
+    "language": {
+      "title": "Idioma / Language",
+      "pt": "Português",
+      "en": "English"
+    },
+    "sections": {
+      "appearance": "Appearance",
+      "display": "Display",
+      "behavior": "Behavior",
+      "accessibility": "Accessibility",
+      "actions": "Actions"
+    },
+    "appearance": {
+      "logoCustom": "Custom Logo",
+      "unlocked": "UNLOCKED",
+      "chooseImage": "Choose image",
+      "useDefault": "Use default",
+      "neonColor": "Neon color"
+    },
+    "display": {
+      "search": "Search bar",
+      "searchDesc": "Shows the search bar to find tasks by text, category or note.",
+      "sort": "Sorting",
+      "sortDesc": "Enable/disable sorting options (Manual, Priority, Deadline, etc.).",
+      "indicators": "Indicators",
+      "indicatorsDesc": "Shows counters and useful indicators at the top of the list (pending/completed).",
+      "progressBar": "Progress bar",
+      "progressBarDesc": "Shows a bar with the overall progress of completed tasks."
+    },
+    "behavior": {
+      "confetti": "Confetti",
+      "confettiDesc": "Visual explosion when completing a task",
+      "quickActions": "Quick actions",
+      "quickActionsDesc": "Shows quick action buttons on tasks (edit, complete, remove).",
+      "drag": "Drag tasks",
+      "dragDesc": "Allows reordering tasks by drag and drop (Manual mode).",
+      "streak": "Streak counter",
+      "streakDesc": "Shows how many consecutive days you completed at least one task.",
+      "sounds": "Feedback sounds",
+      "soundsDesc": "Enables short sounds when adding, completing or removing tasks."
+    },
+    "accessibility": {
+      "textSize": "Increased text size",
+      "textSizeDesc": "Larger, more readable text",
+      "highContrast": "High contrast",
+      "highContrastDesc": "Improves visibility of elements",
+      "daltonism": "Color blindness mode",
+      "daltonismDesc": "Adjusts colors for better distinction",
+      "reduceMotion": "Reduce animations",
+      "reduceMotionDesc": "Removes motion effects",
+      "spacing": "Increased spacing",
+      "spacingDesc": "More space between elements",
+      "focusHighlight": "Focus highlight",
+      "focusHighlightDesc": "Highlights selected element",
+      "keyboard": "Keyboard navigation",
+      "keyboardDesc": "Shortcuts for all actions",
+      "voice": "Voice control",
+      "voiceDesc": "Speak to add and complete tasks",
+      "beta": "beta"
+    },
+    "actions": {
+      "openGuide": "Open Guide",
+      "openGuideDesc": "Tips and app shortcuts",
+      "clearDone": "Clear completed",
+      "clearDoneDesc": "Removes finished tasks",
+      "removeAll": "Remove all",
+      "removeAllDesc": "Deletes all tasks"
+    },
+    "footer": "💜 Made with love to help you be more productive"
+  }
+}

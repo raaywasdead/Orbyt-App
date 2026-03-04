@@ -1,0 +1,454 @@
+{
+  "landing": {
+    "nav": {
+      "features": "Recursos",
+      "how": "Como usar",
+      "preview": "Preview",
+      "enter": "Entrar",
+      "create": "Criar conta",
+      "startNow": "Comece Agora",
+      "navLabel": "Navegar",
+      "startLabel": "Começar"
+    },
+    "hero": {
+      "tag": "Sua órbita produtiva",
+      "title1": "Organize.",
+      "title2": "Evolua.",
+      "title3": "Conquiste.",
+      "sub": "Seu sistema de produtividade pessoal — tarefas, progresso e recompensas construídos para quem leva a sério.",
+      "cta": "Começar agora",
+      "explore": "Explorar funcionalidades"
+    },
+    "features": {
+      "tag": "Recursos",
+      "title": "Feito para o seu fluxo",
+      "sub": "Ferramentas que se adaptam ao seu jeito de trabalhar, não o contrário.",
+      "card0": { "title": "Gestão de tarefas", "desc": "Prioridades, categorias, lotes e arrastar para reorganizar. Seu fluxo de trabalho do seu jeito." },
+      "card1": { "title": "Sistema de badges", "desc": "Conquistas reais desbloqueadas por consistência e volume. Progresso que você pode ver." },
+      "card2": { "title": "Temas & personalização", "desc": "Interface adaptada à sua identidade visual. Cores, logo e estilo que combinam com você." },
+      "card3": { "title": "Estatísticas", "desc": "Entenda seus padrões e acompanhe sua evolução. Dados que revelam seus hábitos reais." },
+      "card4": { "title": "Controle por voz", "desc": "Adicione tarefas falando, sem tirar os olhos do que importa. Produtividade hands-free." },
+      "card5": { "title": "Prazos e Prioridades", "desc": "Organize por urgência, defina prazos e veja o que precisa de atenção agora." }
+    },
+    "how": {
+      "tag": "Primeiros passos",
+      "title1": "Monte. Acompanhe.",
+      "title2": "Conquiste.",
+      "step0": {
+        "title": "Monte sua rotina",
+        "desc": "Organize suas tarefas por prioridade e categoria. Adapte o sistema ao seu fluxo de trabalho — não o contrário."
+      },
+      "step1": {
+        "title": "Construa consistência",
+        "desc": "Seu progresso é acompanhado dia a dia. Streaks, padrões de conclusão e regularidade que você realmente percebe."
+      },
+      "step2": {
+        "title": "Colha as recompensas",
+        "desc": "Badges e conquistas que refletem o que você realmente realizou. Motivação baseada em resultados concretos."
+      }
+    },
+    "preview": {
+      "tag": "Na prática",
+      "title": "O app por dentro",
+      "sub": "Uma interface limpa que sai do caminho e deixa você focar.",
+      "cta": "Experimentar agora"
+    },
+    "cta": {
+      "tag": "Comece agora",
+      "title": "Pronto para sua",
+      "highlight": "órbita produtiva?",
+      "sub": "Configure em minutos. Veja a diferença no primeiro dia.",
+      "btn": "Criar conta grátis"
+    },
+    "footer": {
+      "made": "Feito com carinho para você ser mais produtivo.",
+      "copy": "© 2026 Orbyt. Todos os direitos reservados."
+    }
+  },
+  "login": {
+    "back": "Voltar",
+    "tabs": {
+      "login": "Entrar",
+      "signup": "Criar conta"
+    },
+    "fields": {
+      "email": "E-mail",
+      "password": "Senha",
+      "name": "Nome",
+      "confirmPassword": "Confirmar senha"
+    },
+    "placeholders": {
+      "email": "seu@email.com",
+      "password": "••••••••",
+      "name": "Seu nome",
+      "minPassword": "Mínimo 8 caracteres",
+      "repeatPassword": "Repita a senha"
+    },
+    "forgot": "Esqueci minha senha",
+    "loginBtn": "Entrar",
+    "signupBtn": "Criar conta",
+    "notice": {
+      "loginPrefix": "Ao entrar você concorda com os nossos",
+      "signupPrefix": "Ao criar uma conta você concorda com os nossos",
+      "terms": "Termos de uso",
+      "and": "e",
+      "privacy": "Política de privacidade"
+    },
+    "showPass": "Mostrar senha",
+    "hidePass": "Ocultar senha",
+    "error": {
+      "connection": "Erro de conexão com o servidor"
+    },
+    "success": {
+      "title": "Tudo certo!",
+      "sub": "Entrando na sua órbita…"
+    },
+    "welcome": {
+      "title": "Bem-vindo ao",
+      "brand": "Orbyt",
+      "sub": "Sua órbita produtiva começa agora.",
+      "subMuted": "Organize. Evolua. Conquiste.",
+      "cta": "Entrar no universo"
+    }
+  },
+  "sidebar": {
+    "tasks": "Tarefas",
+    "stats": "Estatísticas",
+    "badges": "Badges",
+    "themes": "Temas",
+    "settings": "Configurações",
+    "help": "Ajuda",
+    "about": "Sobre",
+    "expand": "Expandir sidebar",
+    "collapse": "Recolher sidebar",
+    "expandShort": "Expandir",
+    "collapseShort": "Recolher",
+    "dayStreak": "dia seguido",
+    "daysStreak": "dias seguidos"
+  },
+  "app": {
+    "title": "Lista de Tarefas",
+    "input": {
+      "placeholder": "Digite uma nova tarefa...",
+      "add": "Adicionar",
+      "batch": "Em Lote",
+      "local": "Local",
+      "localLabel": "Local padrão",
+      "localPlaceholder": "ex.: cozinha",
+      "localApply": "Aplicar",
+      "localClose": "Fechar",
+      "micHold": "Segurar",
+      "micRecording": "Gravando...",
+      "micLabel": "Segure para falar a tarefa",
+      "batchAdd": "Adicionar linhas",
+      "batchClose": "Fechar",
+      "batchMiniGuide": "Mini guia",
+      "batchPlaceholder": "Digite várias tarefas, uma por linha. Ex.: cozinha: fazer a janta. Pressione \"Adicionar linhas\"."
+    },
+    "priority": {
+      "ariaLabel": "Selecionar prioridade com setas",
+      "neutral": "Neutra",
+      "low": "Baixa",
+      "medium": "Média",
+      "high": "Alta"
+    },
+    "filters": {
+      "all": "Todas",
+      "pending": "Pendentes",
+      "done": "Concluídas"
+    },
+    "sort": {
+      "label": "Ordenação",
+      "manual": "Manual",
+      "priority": "Prioridade",
+      "deadline": "Prazo",
+      "newest": "Criadas (recentes)",
+      "oldest": "Criadas (antigas)",
+      "az": "A → Z",
+      "za": "Z → A",
+      "manualShort": "Manual",
+      "priorityShort": "Prioridade",
+      "deadlineShort": "Prazo",
+      "newestShort": "Recentes",
+      "oldestShort": "Antigas"
+    },
+    "stats": {
+      "pending": "pendente",
+      "pendentes": "pendentes",
+      "done": "concluída",
+      "donePlural": "concluídas"
+    },
+    "actions": {
+      "clearDone": "Limpar Concluídas",
+      "clearAll": "Remover tudo",
+      "searchPlaceholder": "Buscar por tarefa, categoria ou nota…",
+      "searchLabel": "Buscar tarefas"
+    },
+    "empty": {
+      "noPending": "Tudo em dia!",
+      "noPendingSub": "Você concluiu todas as tarefas. Que órbita impecável.",
+      "noDone": "Nada concluído ainda.",
+      "noDoneSub": "Conclua tarefas e elas aparecerão aqui.",
+      "noTasks": "Órbita vazia.",
+      "noTasksSub": "Adicione sua primeira tarefa e coloque os planos em movimento."
+    },
+    "toast": {
+      "taskDeleted": "Tarefa removida",
+      "taskDeletedSuffix": "foi removida",
+      "undo": "Desfazer",
+      "tasksCleaned": "Tarefas limpas"
+    },
+    "badge": {
+      "unlocked": "✦ Conquista Desbloqueada",
+      "common": "● Comum",
+      "rare": "● Rara",
+      "epic": "✦ Épica",
+      "secret": "◆ Secreta",
+      "special": "★ Especial"
+    },
+    "pages": {
+      "tasks": "Tarefas",
+      "stats": "Estatísticas",
+      "themes": "Temas Visuais",
+      "settings": "Configurações",
+      "badges": "Conquistas",
+      "about": "Sobre",
+      "help": "Central de Ajuda"
+    },
+    "about": {
+      "tagline": "Seu gerenciador de produtividade",
+      "madeBy": "Desenvolvido por"
+    },
+    "overdue": {
+      "badge": "Vencida",
+      "one": "atrasada",
+      "many": "atrasadas",
+      "notif": "Você tem {{count}} tarefa com prazo vencido.",
+      "notifMany": "Você tem {{count}} tarefas com prazo vencido.",
+      "dismiss": "Fechar"
+    },
+    "onboarding": {
+      "startTour": "Ver Tour Rápido",
+      "skip": "Pular e Começar",
+      "skipTour": "Pular tour",
+      "back": "Voltar",
+      "next": "Próximo",
+      "finish": "Começar Agora",
+      "hero": {
+        "welcome": "Bem-vindo ao",
+        "sub": "Gerenciador de tarefas com inteligência visual, conquistas e personalização total.",
+        "pill1": "Drag & Drop",
+        "pill2": "Prioridades",
+        "pill3": "Conquistas",
+        "pill4": "Temas",
+        "pill5": "Estatísticas"
+      },
+      "step1": {
+        "label": "Drag & Drop",
+        "title": "Arraste e Organize",
+        "desc": "Clique, segure e arraste qualquer tarefa para reposicioná-la. A ordem é sua.",
+        "tip": "Disponível no modo de ordenação \"Manual\"",
+        "card1": "Finalizar relatório",
+        "card2": "Revisar pull request",
+        "card3": "Reunião de alinhamento"
+      },
+      "step2": {
+        "label": "Prioridades",
+        "title": "Urgência em Cores",
+        "desc": "Classifique o que importa. Alta, Média, Baixa ou Neutra — visualmente distintas.",
+        "high": "Alta",
+        "medium": "Média",
+        "low": "Baixa",
+        "neutral": "Neutra",
+        "tip": "Defina ao criar ou editar uma tarefa"
+      },
+      "step3": {
+        "label": "Estatísticas",
+        "title": "Acompanhe seu Ritmo",
+        "desc": "Taxa de conclusão, streak de dias consecutivos e histórico detalhado.",
+        "labelRate": "conclusão",
+        "labelDays": "dias seguidos",
+        "labelDone": "concluídas",
+        "labelCats": "categorias",
+        "tip": "Acesse pelas Estatísticas na sidebar"
+      },
+      "step4": {
+        "label": "Recursos",
+        "title": "Tudo no seu Lugar",
+        "desc": "Prazos, notas, categorias, busca, filtros, temas e conquistas desbloqueáveis.",
+        "deadlines": "Prazos",
+        "deadlinesDesc": "Datas limite por tarefa",
+        "notes": "Notas",
+        "notesDesc": "Anotações detalhadas",
+        "achievements": "Conquistas",
+        "achievementsDesc": "20+ badges desbloqueáveis",
+        "themes": "Temas",
+        "themesDesc": "6 paletas visuais",
+        "accessibility": "Acessibil.",
+        "accessibilityDesc": "8 perfis adaptativos",
+        "voice": "Voz",
+        "voiceDesc": "Comandos por microfone",
+        "tip": "Explore as configurações para personalizar"
+      }
+    },
+    "guide": {
+      "getting": "Começando",
+      "organization": "Organização",
+      "customization": "Personalização",
+      "features": "Recursos",
+      "createTask": "Criar tarefa",
+      "createTaskDesc": "Digite no campo e pressione Enter ou clique no botão de adicionar",
+      "completeTask": "Concluir tarefa",
+      "completeTaskDesc": "Clique no círculo à esquerda da tarefa para marcar como concluída",
+      "editTask": "Editar tarefa",
+      "editTaskDesc": "Clique duas vezes no texto para entrar no modo de edição",
+      "categories": "Categorias",
+      "categoriesDesc": "Utilize categoria: tarefa ou tarefa #categoria",
+      "priorities": "Prioridades",
+      "prioritiesDesc": "Defina níveis de urgência: Alta, Média, Baixa ou Neutra",
+      "bulkInput": "Entrada em lote",
+      "bulkInputDesc": "Cole múltiplas tarefas de uma vez, separadas por linha",
+      "reorder": "Reordenação",
+      "reorderDesc": "Arraste tarefas pelo ícone lateral para reorganizar",
+      "themes": "Temas visuais",
+      "themesDesc": "6 temas disponíveis com esquemas de cores únicos",
+      "customLogo": "Logo personalizado",
+      "customLogoDesc": "Desbloqueie para customizar a imagem e cor do logo",
+      "accessibility": "Acessibilidade",
+      "accessibilityDesc": "8 perfis adaptados para diferentes necessidades",
+      "achievements": "Conquistas",
+      "achievementsDesc": "Desbloqueie badges completando desafios especiais",
+      "shortcuts": "Atalhos de Teclado",
+      "statistics": "Estatísticas",
+      "statisticsDesc": "Acompanhe seu progresso com métricas detalhadas",
+      "dailyGoal": "Meta diária",
+      "dailyGoalDesc": "Configure quantas tarefas deseja completar por dia",
+      "animations": "Animações",
+      "animationsDesc": "Celebrações visuais ao completar tarefas",
+      "shortcutAdd": "Adicionar tarefa",
+      "shortcutCancel": "Cancelar edição",
+      "shortcutPaste": "Colar múltiplas tarefas",
+      "saveNote": "Suas tarefas são salvas automaticamente no navegador. Os dados persistem mesmo após fechar a página.",
+      "noteImportant": "Importante:"
+    },
+    "batchGuide": {
+      "title": "Mini guia (Em lote)",
+      "sub": "Clique em copiar pra colar onde quiser.",
+      "oneLine": "Uma linha = uma tarefa",
+      "oneLineDesc": "Cada Enter cria uma tarefa. O app entende cabeçalhos e categorias.",
+      "tagCat": "Categoria por tag",
+      "tagCatDesc": "Escreva a tarefa e finalize com #categoria (ou @categoria).",
+      "prefixCat": "Categoria por prefixo",
+      "prefixCatDesc": "Use \"categoria: tarefa\" (ou \"categoria | tarefa\").",
+      "parenLoc": "Local entre parênteses",
+      "parenLocDesc": "Use \"(local)\" no fim da tarefa.",
+      "groupHeader": "Cabeçalho de grupo",
+      "groupHeaderDesc": "Define a categoria \"ativa\" pras próximas linhas.",
+      "alternatives": "Alternativas",
+      "copy": "Copiar",
+      "copied": "Copiado"
+    },
+    "modal": {
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "save": "Salvar",
+      "clearDone": {
+        "title": "Limpar concluídas",
+        "body": "Tem certeza que deseja remover todas as tarefas concluídas? Esta ação não pode ser desfeita."
+      },
+      "removeAll": {
+        "title": "Remover tudo",
+        "body": "Tem certeza que deseja remover todas as tarefas? Esta ação não pode ser desfeita."
+      }
+    },
+    "details": {
+      "ariaLabel": "Detalhes da tarefa",
+      "title": "Detalhes",
+      "closeLabel": "Fechar detalhes",
+      "taskFallback": "Tarefa",
+      "noCategory": "Sem categoria",
+      "categoryPrefix": "Categoria: ",
+      "deadline": "Prazo",
+      "notes": "Notas",
+      "datePlaceholder": "dd/mm/aaaa",
+      "notesPlaceholder": "Anote detalhes dessa tarefa…",
+      "calendarLabel": "Abrir calendário",
+      "statsTitle": "Estatísticas",
+      "statsCloseLabel": "Fechar estatísticas"
+    }
+  },
+  "settings": {
+    "title": "Configurações",
+    "sub": "Personalize sua experiência do jeito que preferir",
+    "close": "Fechar",
+    "language": {
+      "title": "Idioma / Language",
+      "pt": "Português",
+      "en": "English"
+    },
+    "sections": {
+      "appearance": "Aparência",
+      "display": "Visualização",
+      "behavior": "Comportamento",
+      "accessibility": "Acessibilidade",
+      "actions": "Ações"
+    },
+    "appearance": {
+      "logoCustom": "Logo Personalizado",
+      "unlocked": "DESBLOQUEADO",
+      "chooseImage": "Escolher imagem",
+      "useDefault": "Usar padrão",
+      "neonColor": "Cor do neon"
+    },
+    "display": {
+      "search": "Barra de busca",
+      "searchDesc": "Exibe a barra de busca para localizar tarefas por texto, categoria ou nota.",
+      "sort": "Ordenação",
+      "sortDesc": "Ativa/desativa opções de ordenação (Manual, Prioridade, Prazo, etc.).",
+      "indicators": "Indicadores",
+      "indicatorsDesc": "Mostra contadores e indicadores úteis no topo da lista (pendentes/concluídas).",
+      "progressBar": "Barra de progresso",
+      "progressBarDesc": "Exibe uma barra com o progresso geral de tarefas concluídas."
+    },
+    "behavior": {
+      "confetti": "Confetes",
+      "confettiDesc": "Explosão visual ao concluir tarefa",
+      "quickActions": "Ações rápidas",
+      "quickActionsDesc": "Exibe botões de ação rápida nas tarefas (editar, concluir, remover).",
+      "drag": "Arrastar tarefas",
+      "dragDesc": "Permite reordenar tarefas por arrastar e soltar (modo Manual).",
+      "streak": "Contador de streak",
+      "streakDesc": "Mostra quantos dias consecutivos você completou pelo menos uma tarefa.",
+      "sounds": "Sons de feedback",
+      "soundsDesc": "Ativa sons curtos ao adicionar, concluir ou remover tarefas."
+    },
+    "accessibility": {
+      "textSize": "Tamanho de texto aumentado",
+      "textSizeDesc": "Textos maiores e mais legíveis",
+      "highContrast": "Alto contraste",
+      "highContrastDesc": "Melhora visibilidade de elementos",
+      "daltonism": "Modo para daltonismo",
+      "daltonismDesc": "Ajusta cores para melhor distinção",
+      "reduceMotion": "Reduzir animações",
+      "reduceMotionDesc": "Remove efeitos de movimento",
+      "spacing": "Espaçamento aumentado",
+      "spacingDesc": "Mais espaço entre elementos",
+      "focusHighlight": "Destaque de foco",
+      "focusHighlightDesc": "Realça elemento selecionado",
+      "keyboard": "Navegação por teclado",
+      "keyboardDesc": "Atalhos para todas as ações",
+      "voice": "Controle por voz",
+      "voiceDesc": "Fale para adicionar e concluir tarefas",
+      "beta": "beta"
+    },
+    "actions": {
+      "openGuide": "Abrir Guia",
+      "openGuideDesc": "Dicas e atalhos do app",
+      "clearDone": "Limpar concluídas",
+      "clearDoneDesc": "Remove tarefas finalizadas",
+      "removeAll": "Remover tudo",
+      "removeAllDesc": "Apaga todas as tarefas"
+    },
+    "footer": "💜 Feito com carinho para você ser mais produtivo"
+  }
+}
