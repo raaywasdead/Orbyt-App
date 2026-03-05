@@ -13,7 +13,7 @@ import connectPg from 'connect-pg-simple';
 import { RedisStore } from 'connect-redis';
 import { createClient } from 'redis';
 import dotenv from 'dotenv';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import crypto from 'crypto';
 
 dotenv.config();
@@ -22,10 +22,16 @@ const { Pool } = pkg;
 const app = express();
 
 // ──────────────────────────────────────────────
-// Resend — envio de e-mails transacionais
+// Nodemailer — envio de e-mails transacionais
 // ──────────────────────────────────────────────
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const mailer = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD,
+    }
+});
 
 // ──────────────────────────────────────────────
 // PostgreSQL
@@ -102,11 +108,11 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-    httpOnly: true,
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: 1000 * 60 * 60 * 24
-}
+        httpOnly: true,
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 1000 * 60 * 60 * 24
+    }
 }));
 
 app.use(passport.initialize());
@@ -427,25 +433,25 @@ app.post('/api/forgot-password',
 
             const link = `${process.env.FRONTEND_URL}/redefinir-senha?token=${token}`;
 
-            await resend.emails.send({
-                from: process.env.FROM_EMAIL,
+            await mailer.sendMail({
+                from: `"Orbyt" <${process.env.GMAIL_USER}>`,
                 to: email,
                 subject: 'Redefinição de senha — Orbyt',
                 html: `
-                    <div style="font-family:sans-serif;max-width:480px;margin:0 auto;background:#0f0a1e;padding:32px;border-radius:12px">
-                        <h2 style="color:#a855f7;margin-top:0">Redefinir senha</h2>
-                        <p style="color:#c4b5fd">Recebemos uma solicitação para redefinir a senha da sua conta Orbyt.</p>
-                        <a href="${link}" style="
-                            display:inline-block;padding:12px 24px;
-                            background:#a855f7;color:#fff;border-radius:8px;
-                            text-decoration:none;font-weight:600;margin:16px 0
-                        ">Redefinir minha senha</a>
-                        <p style="color:#888;font-size:0.85rem">
-                            Este link expira em 1 hora.<br>
-                            Se você não solicitou isso, ignore este e-mail.
-                        </p>
-                    </div>
-                `,
+        <div style="font-family:sans-serif;max-width:480px;margin:0 auto;background:#0f0a1e;padding:32px;border-radius:12px">
+            <h2 style="color:#a855f7;margin-top:0">Redefinir senha</h2>
+            <p style="color:#c4b5fd">Recebemos uma solicitação para redefinir a senha da sua conta Orbyt.</p>
+            <a href="${link}" style="
+                display:inline-block;padding:12px 24px;
+                background:#a855f7;color:#fff;border-radius:8px;
+                text-decoration:none;font-weight:600;margin:16px 0
+            ">Redefinir minha senha</a>
+            <p style="color:#888;font-size:0.85rem">
+                Este link expira em 1 hora.<br>
+                Se você não solicitou isso, ignore este e-mail.
+            </p>
+        </div>
+    `,
             });
 
             res.json({ sucesso: true });
