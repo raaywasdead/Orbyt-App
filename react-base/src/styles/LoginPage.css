@@ -237,17 +237,6 @@
 }
 .lp-toggle-pass:hover { color: rgba(255,255,255,0.65); }
 
-.lp-forgot-link {
-  background: none; border: none;
-  color: rgba(168,85,247,0.6);
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.77rem; font-weight: 500;
-  cursor: pointer; text-align: right;
-  padding: 0; margin-top: -6px;
-  transition: color 0.2s;
-}
-.lp-forgot-link:hover { color: #a855f7; }
-
 /* ── Submit button with shimmer ── */
 .lp-btn-submit {
   width: 100%;

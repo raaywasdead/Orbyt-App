@@ -15,8 +15,6 @@ import FAQ from './pages/FAQ'
 import ErrorBoundary from './components/ErrorBoundary'
 import './i18n'
 import { preloadServerData, setupSync } from './services/sync'
-import ForgotPasswordPage from './pages/ForgotPasswordPage'
-import ResetPasswordPage  from './pages/ResetPasswordPage';
 
 function RotaProtegida({ children }: { children: React.ReactNode }) {
   if (!localStorage.getItem('orbyt_onboarded')) return <Navigate to="/" replace />
@@ -43,8 +41,6 @@ function AppRoutes() {
       <Route path="/faq" element={<FAQ />} />
       <Route path="/perfil" element={<RotaProtegida><ProfilePage /></RotaProtegida>} />
       <Route path="/admin" element={<RotaProtegida><AdminPage /></RotaProtegida>} />
-      <Route path="/esqueci-senha" element={<ForgotPasswordPage />} />
-      <Route path="/redefinir-senha" element={<ResetPasswordPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )

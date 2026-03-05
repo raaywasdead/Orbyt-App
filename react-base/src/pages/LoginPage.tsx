@@ -207,9 +207,6 @@ export default function LoginPage({ onEnter, onBack, defaultTab = 'login' }: Log
                       </button>
                     </div>
                   </div>
-                  <button type="button" className="lp-forgot-link" onClick={() => navigate('/esqueci-senha')}>
-                    {t('login.forgot')}
-                  </button>
                   <button type="submit" className="lp-btn-submit">
                     <span>{t('login.loginBtn')}</span>
                     <div className="lp-btn-shimmer" />
